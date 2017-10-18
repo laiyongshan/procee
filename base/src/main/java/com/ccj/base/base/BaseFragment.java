@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
 public abstract class BaseFragment<T extends BasePresenter> extends Fragment implements BaseView {
     private static final String TAG="BaseFragment";
     private LayoutInflater mInflater;
-    protected Dialog dialog;
+    protected Dialog progressDialog;
     public T mPresenter;
     protected float mDensity;
     protected int mDensityDpi;
@@ -35,15 +35,15 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
 
 
     public void initLoading() {
-        if (dialog == null) {
-            dialog = new ProgressDialog(getActivity());
+        if (progressDialog == null) {
+            progressDialog = new ProgressDialog(getActivity());
         }
-        dialog.setTitle("正在加载...");
+        progressDialog.setTitle("正在加载...");
     }
 
     public void dismissLoading() {
-        if (dialog != null) {
-            dialog.dismiss();
+        if (progressDialog != null) {
+            progressDialog.dismiss();
         }
     }
 

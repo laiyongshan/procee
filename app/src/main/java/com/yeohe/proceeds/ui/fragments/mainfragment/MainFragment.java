@@ -34,7 +34,8 @@ import cn.bingoogolapple.refreshlayout.BGAStickinessRefreshViewHolder;
  * Created by Administrator on 2017/10/16.
  */
 
-public class MainFragment extends BaseFragment implements BGARefreshLayout.BGARefreshLayoutDelegate,BGABanner.Delegate<ImageView, String>, BGABanner.Adapter<ImageView, String>{
+public class MainFragment extends BaseFragment<MainFragmentContract.Prasenter> implements MainFragmentContract.View, BGARefreshLayout.BGARefreshLayoutDelegate,BGABanner.Delegate<ImageView, String>, BGABanner.Adapter<ImageView, String>{
+
     private View view;
 
     private static final String TAG = MainFragment.class.getSimpleName();
@@ -187,5 +188,20 @@ public class MainFragment extends BaseFragment implements BGARefreshLayout.BGARe
     @Override
     public void onBannerItemClick(BGABanner banner, ImageView itemView, String model, int position) {
         Toast.makeText(banner.getContext(), "点击了第" + (position + 1) + "页", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void showProgress() {
+
+    }
+
+    @Override
+    public void hideProgress() {
+
+    }
+
+    @Override
+    public void showError(String error) {
+
     }
 }

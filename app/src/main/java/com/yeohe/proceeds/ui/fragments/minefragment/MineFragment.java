@@ -58,6 +58,7 @@ public class MineFragment extends BaseFragment {
         mListView.setParallaxImageView(layout_header_image);
         mListView.addHeaderView(header);
 
+
         String[] titls = new String[]{
                         "资料补充",
                         "交易记录",
@@ -79,6 +80,7 @@ public class MineFragment extends BaseFragment {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if(position>=1)
                         startActivity(new Intent(getActivity(),classes[position-1]));
             }
         });

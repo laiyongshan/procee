@@ -31,7 +31,6 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
         super.onCreate(savedInstanceState);
         getScreen();
         initLoading();
-
     }
 
 

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.WindowManager;
 
 import com.yeohe.proceeds.R;
 import com.yeohe.proceeds.ui.main.MainActivity;
@@ -24,7 +25,7 @@ public class GuideActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);//去掉信息栏
         initView();
         setListener();
         processLogic();

@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.view.WindowManager;
 
 import com.ccj.base.base.BaseActivity;
 import com.ccj.base.utils.router.RouterConstants;
@@ -42,6 +43,8 @@ public class AppStartActivity extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //Fake wait 2s to simulate some initialization on cold start (never do this in production!)
+
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);//去掉信息栏
 
         isFirstStart= PreferenceManager.getDefaultSharedPreferences(AppStartActivity.this)
                 .getBoolean(PREF_KEY_FIRST_START, true);

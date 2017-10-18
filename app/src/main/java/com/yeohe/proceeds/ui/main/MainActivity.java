@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
+import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.ccj.base.base.BaseActivity;
@@ -97,7 +98,7 @@ public class MainActivity extends BaseActivity implements MainContract.View{
 
     public void exit() {
         if ((System.currentTimeMillis() - mExitTime) > 2000) {
-            ToastUtil.getShortToastByString(MainActivity.this, "再按一次退出应用");
+            ToastUtil.showMessage(MainActivity.this, "再按一次退出应用", Toast.LENGTH_SHORT);
             mExitTime = System.currentTimeMillis();
         } else {
 //            MyConfig.clearSharePre(this, "users");

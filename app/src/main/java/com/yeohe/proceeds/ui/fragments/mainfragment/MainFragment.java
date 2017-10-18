@@ -11,10 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ccj.base.base.BaseFragment;
 import com.yeohe.proceeds.R;
 import com.yeohe.proceeds.ui.gesture.GestureActivity;
+import com.yeohe.proceeds.utils.ToastUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -88,18 +90,26 @@ public class MainFragment extends BaseFragment implements BGARefreshLayout.BGARe
 //        mRefreshLayout.setCustomHeaderView(DataEngine.getCustomHeaderView(getActivity()), false);
     }
 
+
     public static final int LOADING_DURATION = 2000;
     @Override
     public void onBGARefreshLayoutBeginRefreshing(BGARefreshLayout refreshLayout) {
+
+        ToastUtil.showMessage(getContext(),"下拉刷新数据.....");
+
         new AsyncTask<Void, Void, Void>() {
 
             @Override
             protected Void doInBackground(Void... params) {
                 try {
                     Thread.sleep(LOADING_DURATION);
+                    Log.i(TAG,"执行下拉刷新任务......");
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+
+//                ToastUtil.getShortToastByString(getContext(),"执行下拉刷新任务......");
+
                 return null;
             }
 
@@ -117,10 +127,16 @@ public class MainFragment extends BaseFragment implements BGARefreshLayout.BGARe
             @Override
             protected Void doInBackground(Void... params) {
                 try {
+
+                    Log.i(TAG,"执行下拉刷新任务......");
+
                     Thread.sleep(LOADING_DURATION);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
+
+//                ToastUtil.getLongToastByString(getContext(),"执行上拉加载任务......");
+
                 return null;
             }
 

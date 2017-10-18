@@ -14,4 +14,9 @@ public class LoginActivity extends BaseActivity{
     public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
         super.onCreate(savedInstanceState, persistentState);
     }
+
+    @Override
+    public void beforeInitView() {
+
+    }
 }

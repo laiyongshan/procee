@@ -1,94 +1,74 @@
 package com.yeohe.proceeds.ui.guide;
 
+import android.app.Activity;
 import android.content.Intent;
-import android.databinding.DataBindingUtil;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBarActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.KeyEvent;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.View;
-import android.view.WindowManager;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 
-import com.alibaba.android.arouter.facade.annotation.Route;
-import com.ccj.base.base.BaseActivity;
-import com.ccj.base.utils.router.RouterConstants;
 import com.yeohe.proceeds.R;
+import com.yeohe.proceeds.ui.main.MainActivity;
 
-import java.util.ArrayList;
-import java.util.List;
-
-
+import cn.bingoogolapple.bgabanner.BGABanner;
+import qiu.niorgai.StatusBarCompat;
 
 /**
- * Created by Administrator on 2017/9/30.
+ * Created by Administrator on 2017/10/10.
  */
-@Route(path = RouterConstants.APP_GUIDE_ACTIVITY)
-public class GuideActivity extends BaseActivity implements ViewPager.OnPageChangeListener {
-    private ViewPager vp;
-    private GuidePagerAdapter vpAdapter;
-    private List<View> views;
-    private ImageView[] dots;
 
-    private int currentIndex;
+public class GuideActivity extends Activity {
 
-    private LinearLayout ll;
+    private static final String TAG = GuideActivity.class.getSimpleName();
+    private BGABanner mBackgroundBanner;
+    private BGABanner mForegroundBanner;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);//去掉信息栏
-        setContentView(R.layout.activity_guide);
 
-        ll= (LinearLayout) findViewById(R.id.ll);
-
-        initViews();
+        initView();
+        setListener();
+        processLogic();
     }
 
-    private void initViews() {
-        LayoutInflater inflater = LayoutInflater.from(this);
+    private void initView() {
+        setContentView(R.layout.activity_guide2);
 
-        views = new ArrayList<View>();
-		views.add(inflater.inflate(R.layout.what_new_one, null));
-        views.add(inflater.inflate(R.layout.what_new_two, null));
-        views.add(inflater.inflate(R.layout.what_new_three, null));
-        views.add(inflater.inflate(R.layout.what_new_four, null));
-
-        vpAdapter = new GuidePagerAdapter(views,GuideActivity.this);
-
-        vp = (ViewPager) findViewById(R.id.viewpager);
-        vp.setAdapter(vpAdapter);
-        vp.setOnPageChangeListener(this);
+        mBackgroundBanner = (BGABanner) findViewById(R.id.banner_guide_background);
+        mForegroundBanner = (BGABanner) findViewById(R.id.banner_guide_foreground);
     }
 
+    private void setListener() {
+        /**
+         * 设置进入按钮和跳过按钮控件资源 id 及其点击事件
+         * 如果进入按钮和跳过按钮有一个不存在的话就传 0
+         * 在 BGABanner 里已经帮开发者处理了防止重复点击事件
+         * 在 BGABanner 里已经帮开发者处理了「跳过按钮」和「进入按钮」的显示与隐藏
+         */
+        mBackgroundBanner.setEnterSkipViewIdAndDelegate(R.id.btn_guide_enter, R.id.tv_guide_skip, new BGABanner.GuideDelegate() {
+            @Override
+            public void onClickEnterOrSkip() {
+                startActivity(new Intent(GuideActivity.this, MainActivity.class));
+                finish();
+            }
+        });
 
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        switch (keyCode) {
-            case KeyEvent.KEYCODE_BACK:
-                return false;
-        }
-        return super.onKeyDown(keyCode, event);
+//        mBackgroundBanner.setEnterSkipViewIdAndDelegate
     }
 
-    @Override
-    public void onPageScrollStateChanged(int arg0) {
+    private void processLogic() {
+        // 设置数据源
+        mBackgroundBanner.setData(R.mipmap.bg1, R.mipmap.bg2, R.mipmap.bg3,R.mipmap.bg4);
 
-    }
-
-    @Override
-    public void onPageScrolled(int arg0, float arg1, int arg2) {
-
+//        mForegroundBanner.setData(R.drawable.uoko_guide_foreground_1, R.drawable.uoko_guide_foreground_2, R.drawable.uoko_guide_foreground_3);
+//        mForegroundBanner.setData(0,0,0,R.drawable.uoko_guide_foreground_3);
     }
 
     @Override
-    public void onPageSelected(int arg0) {
-//        setCurrentDot(arg0);
+    protected void onResume() {
+        super.onResume();
+
+        // 如果开发者的引导页主题是透明的，需要在界面可见时给背景 Banner 设置一个白色背景，避免滑动过程中两个 Banner 都设置透明度后能看到 Launcher
+        mBackgroundBanner.setBackgroundResource(android.R.color.darker_gray);
     }
 
 }

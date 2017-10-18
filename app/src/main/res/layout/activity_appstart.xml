@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:text="@string/app_name"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/blue"
             android:fontFamily="sans-serif-medium"
             tools:ignore="UnusedAttribute"
             android:layout_margin="20dp"

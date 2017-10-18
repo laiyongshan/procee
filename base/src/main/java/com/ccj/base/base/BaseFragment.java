@@ -9,6 +9,8 @@ import android.support.v4.app.Fragment;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 
+import butterknife.ButterKnife;
+
 
 /**
  * Created by Administrator on 2016/7/5.
@@ -29,6 +31,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends Fragment imp
         super.onCreate(savedInstanceState);
         getScreen();
         initLoading();
+
     }
 
 

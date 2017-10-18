@@ -48,7 +48,7 @@ import java.util.ArrayList;
  * FragmentTabs.java complete}
  * 
  * <p>
- * This can also be used inside of a fragment through fragment nesting:
+ * This can also be used inside of a fragment_main through fragment_main nesting:
  * 
  * {@sample
  * development/samples/Support4Demos/src/com/example/android/supportv4/app/
@@ -239,12 +239,12 @@ public class SavFragmentTabHost extends TabHost implements
 
 		if (mAttached) {
 			// If we are already attached to the window, then check to make
-			// sure this tab's fragment is inactive if it exists. This shouldn't
+			// sure this tab's fragment_main is inactive if it exists. This shouldn't
 			// normally happen.
 			info.fragment = mFragmentManager.findFragmentByTag(tag);
 			if (info.fragment != null && !info.fragment.isDetached()) {
 				FragmentTransaction ft = mFragmentManager.beginTransaction();
-//				ft.detach(info.fragment);
+//				ft.detach(info.fragment_main);
 				ft.hide(info.fragment);
 				ft.commit();
 			}
@@ -266,20 +266,20 @@ public class SavFragmentTabHost extends TabHost implements
 		for (int i = 0; i < mTabs.size(); i++) {
 			TabInfo tab = mTabs.get(i);
 			tab.fragment = mFragmentManager.findFragmentByTag(tab.tag);
-//			if (tab.fragment != null && !tab.fragment.isDetached()) {
+//			if (tab.fragment_main != null && !tab.fragment_main.isDetached()) {
 			if (tab.fragment != null) {
 				if (tab.tag.equals(currentTab)) {
-					// The fragment for this tab is already there and
+					// The fragment_main for this tab is already there and
 					// active, and it is what we really want to have
 					// as the current tab. Nothing to do.
 					mLastTab = tab;
 				} else {
-					// This fragment was restored in the active state,
+					// This fragment_main was restored in the active state,
 					// but is not the current tab. Deactivate it.
 					if (ft == null) {
 						ft = mFragmentManager.beginTransaction();
 					}
-//					ft.detach(tab.fragment);
+//					ft.detach(tab.fragment_main);
 					ft.hide(tab.fragment);
 				}
 			}
@@ -347,7 +347,7 @@ public class SavFragmentTabHost extends TabHost implements
 			}
 			if (mLastTab != null) {
 				if (mLastTab.fragment != null) {
-//					ft.detach(mLastTab.fragment);
+//					ft.detach(mLastTab.fragment_main);
 					ft.hide(mLastTab.fragment);
 				}
 			}
@@ -357,7 +357,7 @@ public class SavFragmentTabHost extends TabHost implements
 							newTab.clss.getName(), newTab.args);
 					ft.add(mContainerId, newTab.fragment, newTab.tag);
 				} else {
-//					ft.attach(newTab.fragment);
+//					ft.attach(newTab.fragment_main);
 					ft.show(newTab.fragment);
 				}
 			}

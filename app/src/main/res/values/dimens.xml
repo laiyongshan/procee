@@ -4,8 +4,8 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="activity_left_pading">10dp</dimen>
     <dimen name="activity_right_pading">10dp</dimen>
-    <dimen name="activity_top_pading">10dp</dimen>
-    <dimen name="activity_bottom_pading">10dp</dimen>
+    <dimen name="activity_top_pading">16dp</dimen>
+    <dimen name="activity_bottom_pading">16dp</dimen>
 
 
     <dimen name="activity_left_margin">10dp</dimen>
@@ -24,6 +24,7 @@
     <dimen name="item_margin_vertical">8dp</dimen>
 
 
+    <dimen name="text_size16">16sp</dimen>
     <dimen name="text_size18">18sp</dimen>
     <dimen name="text_size20">20sp</dimen>
     <dimen name="text_size22">22sp</dimen>
@@ -32,5 +33,9 @@
     <dimen name="text_size26">26sp</dimen>
     <dimen name="text_size28">28sp</dimen>
     <dimen name="text_size30">30sp</dimen>
+
+
+    <!-- Default Parallax ImageView Height  -->
+    <dimen name="size_default_height">160dp</dimen>
 
 </resources>

@@ -19,6 +19,8 @@ import com.ccj.base.utils.NetUtils;
 import com.ccj.base.utils.router.RouterConstants;
 import org.greenrobot.eventbus.EventBus;
 import java.util.List;
+
+import butterknife.ButterKnife;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 
@@ -26,7 +28,7 @@ import cn.pedant.SweetAlert.SweetAlertDialog;
  * base 来进行 toolbar dialog 初始化,activity栈的添加,删除等
  * Created by ccj on 2016/7/5.
  */
-public class BaseActivity<T extends BasePresenter>
+public abstract class BaseActivity<T extends BasePresenter>
         extends AppCompatActivity implements BaseView {
 
     private static final String TAG = "BaseActivity";
@@ -43,6 +45,8 @@ public class BaseActivity<T extends BasePresenter>
         AppManager.getAppManager().addActivity(this);
         mContext = this;
         initDialog();
+        beforeInitView();
+        ButterKnife.bind(this);//调用注解框架
 
         if(!NetUtils.isConnected(mContext)){
             new SweetAlertDialog(mContext,SweetAlertDialog.ERROR_TYPE)
@@ -53,6 +57,10 @@ public class BaseActivity<T extends BasePresenter>
 
         };
     }
+
+
+    public abstract void beforeInitView();
+
 
     public void initToolBar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);

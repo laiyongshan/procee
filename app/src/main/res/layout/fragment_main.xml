@@ -107,14 +107,16 @@
                                 android:drawableLeft="@mipmap/icon_not_count"
                                 android:drawablePadding="10dp"
                                 android:gravity="center"
-                                android:text="未结算\n￥0.00" />
+                                android:text="未结算\n￥0.00"
+                                android:layout_marginRight="20dp"
+                                />
 
                         </LinearLayout>
 
                         <View
                             android:layout_width="1dp"
                             android:layout_height="match_parent"
-                            android:background="@color/gray"
+                            android:background="#c0c0c0"
                             android:padding="10dp"
                             />
 
@@ -139,18 +141,18 @@
                     </LinearLayout>
 
 
-                    <!--<TextView-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:text="更多敬请期待"-->
-                        <!--android:layout_marginTop="@dimen/activity_top_margin"-->
-                        <!--android:drawableLeft="@mipmap/icon_main_more"-->
-                        <!--android:gravity="center_vertical"-->
-                        <!--android:drawablePadding="@dimen/activity_left_pading"-->
-                        <!--android:paddingLeft="50dp"-->
-                        <!--android:paddingBottom="20dp"-->
-                        <!--android:paddingTop="10dp"-->
-                        <!--/>-->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="更多敬请期待"
+                        android:layout_marginTop="@dimen/activity_top_margin"
+                        android:drawableLeft="@mipmap/icon_main_more"
+                        android:gravity="center_vertical"
+                        android:drawablePadding="@dimen/activity_left_pading"
+                        android:paddingLeft="40dp"
+                        android:paddingBottom="20dp"
+                        android:paddingTop="10dp"
+                        />
 
 
                     <Button

@@ -76,6 +76,8 @@
 
         <activity android:name=".ui.login.LoginActivity"/>
 
+        <activity android:name=".ui.other.PasswordInputActivity"/>
+
 
     </application>
 

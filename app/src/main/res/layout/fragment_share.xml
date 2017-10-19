@@ -4,10 +4,18 @@
     android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/btn"
+        android:id="@+id/btn1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="数字键盘"
+        android:text="手势密码"
+        />
+
+
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="密码输入键盘"
         />
 
 </LinearLayout>

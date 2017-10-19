@@ -51,8 +51,6 @@ public class MainFragment extends BaseFragment<MainFragmentContract.Prasenter> i
     @BindView(R.id.rl_normalview_refresh)
     BGARefreshLayout mRefreshLayout;
 
-    @BindView(R.id.btn1)
-    Button btn1;
 
     @BindView(R.id.banner_main_default)
     BGABanner mDefaultBanner;
@@ -94,7 +92,7 @@ public class MainFragment extends BaseFragment<MainFragmentContract.Prasenter> i
     public void click(View v){
         switch (v.getId()){
             case R.id.btn1:
-                startActivity(new Intent(getActivity(), GestureActivity.class));
+
                 break;
         }
     }

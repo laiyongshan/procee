@@ -3,51 +3,199 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     style="@style/MatchMatch"
     android:background="@color/white"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
 
-    <cn.bingoogolapple.refreshlayout.BGARefreshLayout
-        android:id="@+id/rl_normalview_refresh"
-        style="@style/MatchMatch"
-        android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
         <LinearLayout
-            style="@style/MatchAuto"
+            style="@style/MatchMatch"
             android:orientation="vertical">
 
 
+            <cn.bingoogolapple.refreshlayout.BGARefreshLayout
+                android:id="@+id/rl_normalview_refresh"
+                style="@style/MatchMatch"
+                android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="this is mainfragment!" />
+                <LinearLayout
+                    style="@style/MatchAuto"
+                    android:orientation="vertical">
 
 
-            <Button
-                android:id="@+id/btn1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="手势密码"
-                android:textSize="30sp" />
+                    <!--title-->
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:padding="16dp">
 
-            <cn.bingoogolapple.bgabanner.BGABanner
-                android:id="@+id/banner_main_default"
-                style="@style/BannerDefaultStyle"
-                app:banner_indicatorGravity="bottom|right"
-                app:banner_isNeedShowIndicatorOnOnlyOnePage="true"
-                app:banner_isNumberIndicator="true"
-                app:banner_numberIndicatorBackground="@drawable/shape_number_indicator_background"
-                app:banner_numberIndicatorTextColor="@android:color/white"
-                app:banner_numberIndicatorTextSize="10sp"
-                app:banner_pointAutoPlayAble="true"
-                app:banner_pointContainerBackground="@android:color/transparent"
-                app:banner_transitionEffect="defaultEffect"/>
+
+                        <TextView
+                            android:id="@+id/hello_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="你好，请先登录"
+                            android:textColor="@color/black"
+                            android:textSize="@dimen/text_size26" />
+
+
+                        <TextView
+                            android:id="@+id/date_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/hello_tv"
+                            android:layout_marginTop="2dp"
+                            android:text="日期显示" />
+
+
+                        <cn.bingoogolapple.badgeview.BGABadgeImageView
+                            android:id="@+id/biv_main_message"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/laybeijin"
+                            android:padding="5dp"
+                            android:scaleType="fitCenter"
+                            android:src="@mipmap/icon_message" />
+
+                    </RelativeLayout>
+
+
+                    <com.yeohe.proceeds.widgets.MyGridView
+                        android:id="@+id/funcation_gv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/activity_bottom_margin"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:horizontalSpacing="8dp"
+                        android:numColumns="3"
+                        android:padding="@dimen/activity_top_pading"
+                        android:scrollbars="none"
+                        android:verticalSpacing="5dp" />
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="@color/gray" />
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="@dimen/activity_bottom_pading"
+                        android:weightSum="2">
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            >
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableLeft="@mipmap/icon_not_count"
+                                android:drawablePadding="10dp"
+                                android:gravity="center"
+                                android:text="未结算\n￥0.00" />
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="1dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/gray"
+                            android:padding="10dp"
+                            />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            >
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:drawableLeft="@mipmap/icon_count_today"
+                                android:drawablePadding="10dp"
+                                android:gravity="center"
+                                android:text="今日结算\n￥0.00" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <!--<TextView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:text="更多敬请期待"-->
+                        <!--android:layout_marginTop="@dimen/activity_top_margin"-->
+                        <!--android:drawableLeft="@mipmap/icon_main_more"-->
+                        <!--android:gravity="center_vertical"-->
+                        <!--android:drawablePadding="@dimen/activity_left_pading"-->
+                        <!--android:paddingLeft="50dp"-->
+                        <!--android:paddingBottom="20dp"-->
+                        <!--android:paddingTop="10dp"-->
+                        <!--/>-->
+
+
+                    <Button
+                        android:id="@+id/btn1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_margin="30dp"
+                        android:text="手势密码"
+                        android:textSize="30sp"
+                        android:visibility="gone" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:background="@color/gray" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="12dp"
+                        android:text="热门推荐" />
+
+                    <cn.bingoogolapple.bgabanner.BGABanner
+                        android:id="@+id/banner_main_default"
+                        style="@style/BannerDefaultStyle"
+                        app:banner_indicatorGravity="bottom|right"
+                        app:banner_isNeedShowIndicatorOnOnlyOnePage="true"
+                        app:banner_isNumberIndicator="true"
+                        app:banner_numberIndicatorBackground="@drawable/shape_number_indicator_background"
+                        app:banner_numberIndicatorTextColor="@android:color/white"
+                        app:banner_numberIndicatorTextSize="10sp"
+                        app:banner_pointAutoPlayAble="true"
+                        app:banner_pointContainerBackground="@android:color/transparent"
+                        app:banner_transitionEffect="defaultEffect" />
+
+                </LinearLayout>
+
+            </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
 
         </LinearLayout>
+    </ScrollView>
 
-    </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
 
 </LinearLayout>

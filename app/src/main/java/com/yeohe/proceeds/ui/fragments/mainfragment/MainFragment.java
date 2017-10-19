@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,8 +18,11 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.ccj.base.base.BaseFragment;
 import com.yeohe.proceeds.R;
+import com.yeohe.proceeds.adapter.TypeAdapter;
 import com.yeohe.proceeds.ui.gesture.GestureActivity;
+import com.yeohe.proceeds.utils.StringUtils;
 import com.yeohe.proceeds.utils.ToastUtil;
+import com.yeohe.proceeds.widgets.MyGridView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +30,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import cn.bingoogolapple.badgeview.BGABadgeImageView;
 import cn.bingoogolapple.bgabanner.BGABanner;
 import cn.bingoogolapple.refreshlayout.BGARefreshLayout;
 import cn.bingoogolapple.refreshlayout.BGAStickinessRefreshViewHolder;
@@ -40,6 +45,9 @@ public class MainFragment extends BaseFragment<MainFragmentContract.Prasenter> i
 
     private static final String TAG = MainFragment.class.getSimpleName();
 
+    @BindView(R.id.funcation_gv)
+    MyGridView funcation_gv;
+
     @BindView(R.id.rl_normalview_refresh)
     BGARefreshLayout mRefreshLayout;
 
@@ -48,6 +56,17 @@ public class MainFragment extends BaseFragment<MainFragmentContract.Prasenter> i
 
     @BindView(R.id.banner_main_default)
     BGABanner mDefaultBanner;
+
+    @BindView(R.id.biv_main_message)
+    BGABadgeImageView biv_mian_message;
+
+    @BindView(R.id.date_tv)
+    TextView date_tv;
+
+
+
+    private ArrayList<Integer> funcation_types;
+    private TypeAdapter funcation_type_adapter;
 
     @Nullable
     @Override
@@ -84,6 +103,28 @@ public class MainFragment extends BaseFragment<MainFragmentContract.Prasenter> i
     public void initView() {
 //        mRefreshLayout = (BGARefreshLayout) view.findViewById(R.id.rl_normalview_refresh);
         loadBannerData(mDefaultBanner,imgURLs.size());
+
+        funcation_gv = (MyGridView) view.findViewById(R.id.funcation_gv);
+        String[] funcation_strArr = {"刷卡收款", "扫码收款", "快捷收款"};
+        funcation_types = new ArrayList<Integer>();
+        funcation_types.add(R.mipmap.main_icon_card);//刷卡收款
+        funcation_types.add(R.mipmap.main_icon_sweep);//扫码收款
+        funcation_types.add(R.mipmap.main_icon_pay);//快捷收款
+        funcation_type_adapter = new TypeAdapter(funcation_types, getActivity().getApplicationContext(), funcation_strArr, 1);
+        funcation_gv.setAdapter(funcation_type_adapter);
+        funcation_gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                }
+            }
+        );
+
+        biv_mian_message.showCirclePointBadge();
+        biv_mian_message.setPadding(10,10,10,10);
+
+
+        date_tv.setText(StringUtils.StringData());
 
     }
 

@@ -12,6 +12,7 @@ import com.leo.gesturelibray.enums.LockMode;
 import com.leo.gesturelibray.util.StringUtils;
 import com.yeohe.proceeds.R;
 import com.yeohe.proceeds.utils.PasswordUtil;
+import com.yeohe.proceeds.utils.ToastUtil;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -73,6 +74,7 @@ public class GestureActivity extends BaseActivity{
      */
     private void actionSecondActivity(LockMode mode) {
         if (mode != LockMode.SETTING_PASSWORD) {
+            ToastUtil.showMessage(this,PasswordUtil.getPin(this));
             if (StringUtils.isEmpty(PasswordUtil.getPin(this))) {
                 Toast.makeText(getBaseContext(), "请先设置密码", Toast.LENGTH_SHORT).show();
                 return;

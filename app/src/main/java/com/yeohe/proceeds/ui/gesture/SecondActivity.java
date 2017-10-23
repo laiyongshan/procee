@@ -95,9 +95,9 @@ public class SecondActivity extends BaseActivity implements SlidrListener, Rippl
      */
     private void setLockMode(LockMode mode, String password, String msg) {
         lvLock.setMode(mode);
-        lvLock.setErrorNumber(3);
+        lvLock.setErrorNumber(4);
 //        lvLock.setClearPasssword(false);
-        if (mode != SETTING_PASSWORD) {
+        if (mode != SETTING_PASSWORD){
             tvHint.setText("请输入已经设置过的密码");
             lvLock.setOldPassword(password);
         } else {

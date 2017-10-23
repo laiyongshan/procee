@@ -5,6 +5,7 @@
 
 
     <string name="NumberKey0">0</string>
+    <string name="NumberKey00">00</string>
     <string name="NumberKey1">1</string>
     <string name="NumberKey2">2</string>
     <string name="NumberKey3">3</string>
@@ -19,7 +20,8 @@
     <string name="tvTotalAmtTemplate">00</string>
     <string name="SPACE">　</string>
     <string name="OK">确定</string>
-    <string name="strtitle">键盘输入实际进货数量</string>
-    <string name="DiologNumberDiscountInput">请输入实际进货数量：</string>
+
+
+    <string name="error_gif">x or y bound size should be at least %1$dpx and file size should be no more than %2$sM</string>
 
 </resources>

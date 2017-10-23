@@ -35,11 +35,12 @@ public class MainActivity extends BaseActivity implements MainContract.View{
         PageNavigationView tab = (PageNavigationView) findViewById(R.id.tab);
 
         NavigationController navigationController = tab.custom()
-                .addItem(newItem(R.drawable.ic_restore_gray_24dp,R.drawable.ic_restore_teal_24dp,"首页"))
+                .addItem(newItem(R.mipmap.tab_store_normal,R.mipmap.tab_store_selected,"首页"))
                 .addItem(newItem(R.drawable.ic_favorite_gray_24dp,R.drawable.ic_favorite_teal_24dp,"分享"))
                 .addItem(newItem(R.drawable.ic_nearby_gray_24dp,R.drawable.ic_nearby_teal_24dp,"我的"))
                 .build();
 
+        tab.setPadding(0,15,0,0);
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewPager);
         viewPager.setAdapter(new MyViewPagerAdapter(getFragments(),getSupportFragmentManager(),navigationController.getItemCount()));

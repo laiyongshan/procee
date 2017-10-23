@@ -182,7 +182,7 @@ public class PasswordView extends RelativeLayout implements View.OnClickListener
             }
             if(position == 11){
 //                viewHolder.btnKey.setBackgroundResource(R.drawable.selector_key_del);
-                viewHolder.btnKey.setText("C");
+                viewHolder.btnKey.setText("B");
             }
 
             return convertView;

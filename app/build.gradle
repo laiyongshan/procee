@@ -199,6 +199,8 @@ dependencies {
 
     compile 'com.contrarywind:Android-PickerView:3.2.6'
 
+    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.1@aar'
+
 }
 
 //App 虚拟内存分区 dex文件

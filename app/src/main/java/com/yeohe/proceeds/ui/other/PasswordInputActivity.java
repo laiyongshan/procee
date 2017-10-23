@@ -27,8 +27,7 @@ public class PasswordInputActivity extends BaseActivity {
             @Override
             public void inputFinish() {
                 //输入完成后我们简单显示一下输入的密码
-//                Toast.makeText(InputPswActivity.this, pwdView.getStrPassword(), Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(PasswordInputActivity.this, pwdView.getStrPassword(), Toast.LENGTH_SHORT).show();
 //                map.put("passwordpin",pwdView.getStrPassword());//输入的密码
 
             }

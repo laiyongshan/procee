@@ -21,6 +21,19 @@ public final class RouterConstants {
 
 
     /**
+     * 注册界面
+     * */
+    public static final String REGISTER_MODULE_NAME="/register/";
+    public static final String REGISTER_MODULE_ACTIVITY=REGISTER_MODULE_NAME+"RegisterActivity";
+
+
+    /**
+     * 忘记密码
+     * */
+    public static final String FORGET_PASSWORD_MODULE="/changePassword/";
+    public static final String FORGET_PASSWORD_ACTIVITY=FORGET_PASSWORD_MODULE+"ChangePasswordActivity";
+
+    /**
      * addcar 添加车辆信息界面
      * */
     public static final String ADDCAR_MODULE_NAME="/addcar/";
@@ -63,5 +76,19 @@ public final class RouterConstants {
     public static final String APP_START_MODULE="/appstart/";
     public static final String APP_START_ACTIVITY=APP_START_MODULE+"AppAtartActivity";
     public static final String APP_GUIDE_ACTIVITY=APP_START_MODULE+"AppGuideActivity";
+
+
+    /*
+    * 消息中心页面
+    * */
+    public static final String MESSAGE_MODULE="/message/";
+    public static final String MESSAGE_ACTIVITY=MESSAGE_MODULE+"MessageActivity";
+
+
+    /**
+     * 收款
+     * */
+    public static final String NUMKEYBOART_ACTIVITY="/NumKeyBortActivity/";
+
 
 }

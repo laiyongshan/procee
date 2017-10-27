@@ -13,7 +13,9 @@
 
         <LinearLayout
             style="@style/MatchMatch"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingTop="16dp"
+            >
 
 
             <cn.bingoogolapple.refreshlayout.BGARefreshLayout
@@ -58,7 +60,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
                             android:background="@drawable/laybeijin"
-                            android:padding="5dp"
+                            android:padding="10dp"
                             android:scaleType="fitCenter"
                             android:src="@mipmap/icon_message" />
 

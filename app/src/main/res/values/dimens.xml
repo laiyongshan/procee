@@ -36,7 +36,7 @@
 
 
     <!-- Default Parallax ImageView Height  -->
-    <dimen name="size_default_height">180dp</dimen>
+    <dimen name="size_default_height">220dp</dimen>
 
     <dimen name="POSMAIN_TOP_HEIGHT">40dp</dimen>
 

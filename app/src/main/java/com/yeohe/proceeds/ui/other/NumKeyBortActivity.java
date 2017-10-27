@@ -7,7 +7,9 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 
+import com.alibaba.android.arouter.facade.annotation.Route;
 import com.ccj.base.base.BaseActivity;
+import com.ccj.base.utils.router.RouterConstants;
 import com.yeohe.proceeds.R;
 
 import java.util.ArrayList;
@@ -21,6 +23,7 @@ import qiu.niorgai.StatusBarCompat;
  * Created by Administrator on 2017/10/20.
  */
 
+@Route(path = RouterConstants.NUMKEYBOART_ACTIVITY)
 public class NumKeyBortActivity extends BaseActivity {
 
     private StringBuffer mInputString = new StringBuffer("");

@@ -1,45 +1,132 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <Button
-        android:id="@+id/btn1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="手势密码"
-        />
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
 
 
-    <Button
-        android:id="@+id/btn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="密码输入键盘"
-        />
-
-    <Button
-        android:id="@+id/btn3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="日期選擇器"
-        />
-
-    <Button
-        android:id="@+id/btn4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="数字输入键盘"
-        />
+    <include layout="@layout/item_title2" />
 
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/btn5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="图片选择"
-        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="50dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="扫一扫分享友和融钱包"
+                android:drawableLeft="@mipmap/icon_app"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:drawablePadding="15dp"
+                />
+
+
+            <ImageView
+                android:id="@+id/qr_iv"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_margin="15dp"
+                />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="------------------------ 分享至  ----------------------"
+                />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                >
+
+                <TextView
+                    android:id="@+id/sharetoqq_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="QQ"
+                    android:drawableTop="@mipmap/qq"
+                    android:gravity="center"
+                    android:layout_marginRight="40dp"
+                    android:drawablePadding="5dp"
+                    />
+
+
+                <TextView
+                    android:id="@+id/sharetowechat_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="微信"
+                    android:drawableTop="@mipmap/weixin"
+                    android:gravity="center"
+                    android:drawablePadding="5dp"
+                    android:layout_marginRight="40dp"
+                    />
+
+
+                <TextView
+                    android:id="@+id/sharetomoment_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="朋友圈"
+                    android:drawableTop="@mipmap/pengyouquan"
+                    android:gravity="center"
+                    android:drawablePadding="5dp"
+                    />
+
+
+            </LinearLayout>
+
+
+            <!--<Button-->
+                <!--android:id="@+id/btn1"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="手势密码" />-->
+
+
+            <!--<Button-->
+                <!--android:id="@+id/btn2"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="密码输入键盘" />-->
+
+            <!--<Button-->
+                <!--android:id="@+id/btn3"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="日期選擇器" />-->
+
+            <!--<Button-->
+                <!--android:id="@+id/btn4"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="数字输入键盘" />-->
+
+
+            <!--<Button-->
+                <!--android:id="@+id/btn5"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content" />-->
+        </LinearLayout>
+
+
+    </ScrollView>
 
 
 </LinearLayout>

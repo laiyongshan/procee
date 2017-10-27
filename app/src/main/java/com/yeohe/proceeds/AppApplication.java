@@ -12,6 +12,7 @@ import com.tencent.bugly.beta.Beta;
 import com.tencent.bugly.beta.UpgradeInfo;
 import com.tencent.bugly.beta.ui.UILifecycleListener;
 import com.tencent.bugly.crashreport.CrashReport;
+import com.weavey.loading.lib.LoadingLayout;
 import com.zhy.http.okhttp.OkHttpUtils;
 
 import java.io.BufferedReader;
@@ -19,6 +20,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import cn.jiguang.share.android.api.JShareInterface;
 import okhttp3.OkHttpClient;
 
 import android.os.Environment;
@@ -36,9 +38,9 @@ import android.widget.TextView;
 
 public class AppApplication extends BaseApplication {
 
-    private static  boolean isDebug=true;
+    private static boolean isDebug = true;
 
-    public static final String APP_ID = "b285b4dea3"; // TODO 替换成bugly上注册的appid
+    public static final String APP_ID = "a4df74d83d"; // TODO 替换成bugly上注册的appid
     public static final String APP_CHANNEL = "DEBUG"; // TODO 自定义渠道
     private static final String TAG = "OnUILifecycleListener";
 
@@ -54,10 +56,32 @@ public class AppApplication extends BaseApplication {
 
         initBeta();
 
+        initLoadingLayout();
+
+        JShareInterface.setDebugMode(true);
+        JShareInterface.init(this);//初始化极光分享
+
+
     }
 
 
-    private void initOkHttp(){
+    private void initLoadingLayout() {
+        LoadingLayout.getConfig()
+                .setErrorText("出错啦~请稍后重试！")
+                .setEmptyText("抱歉，暂无数据")
+                .setNoNetworkText("无网络连接，请检查您的网络···")
+                .setErrorImage(R.mipmap.define_error)
+                .setEmptyImage(R.mipmap.define_empty)
+                .setNoNetworkImage(R.mipmap.define_nonetwork)
+                .setAllTipTextSize(14)
+                .setReloadButtonText("点我重试哦")
+                .setReloadButtonTextSize(14)
+                .setReloadButtonWidthAndHeight(150, 40)
+                .setAllPageBackgroundColor(R.color.background);
+    }
+
+
+    private void initOkHttp() {
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
 //                .addInterceptor(new LoggerInterceptor("TAG"))
                 .connectTimeout(10000L, TimeUnit.MILLISECONDS)
@@ -67,8 +91,8 @@ public class AppApplication extends BaseApplication {
         OkHttpUtils.initClient(okHttpClient);
     }
 
-    private void initRouter(){
-        if(true) {
+    private void initRouter() {
+        if (true) {
             ARouter.openLog();     // 打印日志
             ARouter.openDebug();   // 开启调试模式(如果在InstantRun模式下运行，必须开启调试模式！线上版本需要关闭,否则有安全风险)
             ARouter.printStackTrace(); // 打印日志的时候打印线程堆栈
@@ -78,7 +102,7 @@ public class AppApplication extends BaseApplication {
     }
 
 
-    private void  initBugly(){
+    private void initBugly() {
 //        CrashReport.initCrashReport(getApplicationContext(), "b285b4dea3", true);
 
         Bugly.init(getApplicationContext(), APP_ID, false);//统一初始化方法：
@@ -134,7 +158,7 @@ public class AppApplication extends BaseApplication {
     }
 
 
-    private void  initBeta(){
+    private void initBeta() {
 
         /**** Beta高级设置*****/
         /**
@@ -156,7 +180,7 @@ public class AppApplication extends BaseApplication {
          */
         Beta.initDelay = 1 * 1000;
 
-        Beta.upgradeCheckPeriod =60 * 1000;
+        Beta.upgradeCheckPeriod = 60 * 1000;
 
 //        Beta.enableNotification = true;
 
@@ -227,7 +251,7 @@ public class AppApplication extends BaseApplication {
          *  view - 升级对话框的根布局视图，可通过这个对象查找指定view控件
          *  upgradeInfo - 升级信息
          */
-      Beta.upgradeDialogLifecycleListener = new UILifecycleListener<UpgradeInfo>() {
+        Beta.upgradeDialogLifecycleListener = new UILifecycleListener<UpgradeInfo>() {
             @Override
             public void onCreate(Context context, View view, UpgradeInfo upgradeInfo) {
                 TLog.logI("onCreate");
@@ -251,16 +275,15 @@ public class AppApplication extends BaseApplication {
                     }
                 });
 
-                Button beta_cancel_button=(Button)view.findViewWithTag("beta_cancel_button");
+                Button beta_cancel_button = (Button) view.findViewWithTag("beta_cancel_button");
                 beta_cancel_button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         AppManager.getAppManager().AppExit(getApplicationContext());
-                        TLog.logI( "OnClickListener");
+                        TLog.logI("OnClickListener");
                     }
                 });
             }
-
 
 
             @Override
@@ -316,14 +339,14 @@ public class AppApplication extends BaseApplication {
          * 参数2：appId
          * 参数3：是否开启debug
          */
-        Bugly.init(getApplicationContext(),APP_ID, false);
+        Bugly.init(getApplicationContext(), APP_ID, false);
 
         /**
          * 如果想自定义策略，按照如下方式设置
          */
 
         /***** Bugly高级设置 *****/
-                BuglyStrategy strategy = new BuglyStrategy();
+        BuglyStrategy strategy = new BuglyStrategy();
         /**
          * 设置app渠道号
          */

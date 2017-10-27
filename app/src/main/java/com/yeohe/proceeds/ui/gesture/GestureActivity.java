@@ -21,6 +21,7 @@ import butterknife.OnClick;
  * Created by Administrator on 2017/10/17.
  */
 
+//
 public class GestureActivity extends BaseActivity{
 
     @BindView(R.id.rv_setting)

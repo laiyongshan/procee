@@ -17,9 +17,14 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.ccj.base.base.BaseFragment;
+import com.ccj.base.utils.router.RouterConstants;
+import com.ccj.base.utils.router.RouterUtils;
+import com.tencent.bugly.crashreport.CrashReport;
 import com.yeohe.proceeds.R;
 import com.yeohe.proceeds.adapter.TypeAdapter;
 import com.yeohe.proceeds.ui.gesture.GestureActivity;
+import com.yeohe.proceeds.ui.other.NumKeyBortActivity;
+import com.yeohe.proceeds.ui.other.PasswordInputActivity;
 import com.yeohe.proceeds.utils.StringUtils;
 import com.yeohe.proceeds.utils.ToastUtil;
 import com.yeohe.proceeds.widgets.MyGridView;
@@ -88,11 +93,15 @@ public class MainFragment extends BaseFragment<MainFragmentContract.Prasenter> i
         return view;
     }
 
-    @OnClick({R.id.btn1})
+    @OnClick({R.id.btn1,R.id.biv_main_message})
     public void click(View v){
         switch (v.getId()){
             case R.id.btn1:
 
+                break;
+
+            case R.id.biv_main_message:
+                RouterUtils.navigation(RouterConstants.MESSAGE_ACTIVITY);
                 break;
         }
     }
@@ -113,7 +122,20 @@ public class MainFragment extends BaseFragment<MainFragmentContract.Prasenter> i
         funcation_gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                    switch (i){
 
+                        case 0://刷卡
+                            RouterUtils.navigation(RouterConstants.NUMKEYBOART_ACTIVITY);
+                            break;
+
+                        case 1://扫码收款
+                            startActivity(new Intent(getActivity(),GestureActivity.class));
+                            break;
+
+                        case 2://快捷收款
+                            startActivity(new Intent(getActivity(), PasswordInputActivity.class));
+                            break;
+                    }
                 }
             }
         );

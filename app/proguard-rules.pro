@@ -402,3 +402,16 @@
     <methods>;
 }
 
+-dontwarn cn.jiguang.**
+-keep class cn.jiguang.** { *; }
+-dontwarn cn.jpush.**
+-keep class cn.jpush.** { *; }
+
+
+-dontoptimize
+-dontpreverify
+
+
+-dontwarn com.google.**
+-keep class com.google.gson.** {*;}
+-keep class com.google.protobuf.** {*;}

@@ -1,5 +1,9 @@
 package com.yeohe.proceeds.ui.main;
 
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -28,6 +32,9 @@ import qiu.niorgai.StatusBarCompat;
 
 @Route(path = RouterConstants.MAIN_MOUDLE_ACTIVITY)
 public class MainActivity extends BaseActivity implements MainContract.View{
+
+    public static boolean isForeground = false;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +67,26 @@ public class MainActivity extends BaseActivity implements MainContract.View{
         setContentView(R.layout.activity_main);
         //add alpha to color
         StatusBarCompat.setStatusBarColor(this, Color.argb(255,00,00,00));
+    }
+
+
+    @Override
+    protected void onResume() {
+        isForeground = true;
+        super.onResume();
+    }
+
+
+    @Override
+    protected void onPause() {
+        isForeground = false;
+        super.onPause();
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
 
@@ -127,4 +154,6 @@ public class MainActivity extends BaseActivity implements MainContract.View{
     public void showExitDialog() {
 
     }
+
+
 }

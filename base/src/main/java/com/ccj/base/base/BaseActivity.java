@@ -62,6 +62,7 @@ public abstract class BaseActivity<T extends BasePresenter>
     public abstract void beforeInitView();
 
 
+
     public void initToolBar() {
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);

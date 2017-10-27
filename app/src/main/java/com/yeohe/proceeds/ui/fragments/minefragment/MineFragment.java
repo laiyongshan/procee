@@ -17,6 +17,7 @@ import com.yeohe.proceeds.adapter.MineAdapter;
 import com.yeohe.proceeds.ui.gesture.GestureActivity;
 import com.yeohe.proceeds.ui.gesture.SecondActivity;
 import com.yeohe.proceeds.ui.login.LoginActivity;
+import com.yeohe.proceeds.ui.register.RegisterActivity;
 import com.yeohe.proceeds.widgets.ParallaxScollListView;
 
 import java.util.ArrayList;
@@ -42,7 +43,7 @@ public class MineFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_mine, null);
-        ButterKnife.bind(this,view);
+        ButterKnife.bind(this, view);
 
         initView();
 
@@ -60,28 +61,28 @@ public class MineFragment extends BaseFragment {
 
 
         String[] titls = new String[]{
-                        "资料补充",
-                        "交易记录",
-                        "我的银行卡",
-                        "帮助中心",
-                        "设置"
-                };
+                "资料补充",
+                "交易记录",
+                "我的银行卡",
+                "帮助中心",
+                "设置"
+        };
 
-        final Class[] classes=new Class[]{
-                GestureActivity.class,
+        final Class[] classes = new Class[]{
+                RegisterActivity.class,
                 GestureActivity.class,
                 LoginActivity.class,
                 LoginActivity.class,
                 GestureActivity.class
         };
 
-        mListView.setAdapter(new MineAdapter(getActivity(),titls,classes));
+        mListView.setAdapter(new MineAdapter(getActivity(), titls, classes));
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if(position>=1)
-                        startActivity(new Intent(getActivity(),classes[position-1]));
+                if (position >= 1)
+                    startActivity(new Intent(getActivity(), classes[position - 1]));
             }
         });
 

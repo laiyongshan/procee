@@ -102,7 +102,7 @@ public class NumKeyBortActivity extends BaseActivity {
                 tvInputView.setText(mInputString);
             } else {
                 if (index + 1 == mInputString.length() || mInputString.length() == index + 2) {
-                    if (!str.equalsIgnoreCase(".")) {
+                    if (!str.equalsIgnoreCase(".")){
                         mInputString.append(str);
                         tvInputView.setText(mInputString);
                     }

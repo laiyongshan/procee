@@ -2,13 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="80dp"
     android:background="@drawable/laybeijin"
     android:gravity="center_vertical"
     android:paddingTop="@dimen/activity_top_pading"
-    android:paddingRight="20dp"
+    android:paddingRight="@dimen/activity_right_pading"
     android:paddingBottom="@dimen/activity_bottom_pading"
-    android:paddingLeft="20dp"
+    android:paddingLeft="@dimen/activity_left_pading"
     >
 
 
@@ -19,13 +19,14 @@
         android:layout_alignParentLeft="true"
         android:textSize="@dimen/text_size16"
         android:layout_centerVertical="true"
+        android:padding="10dp"
         />
 
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/icon_right"
+        android:src="@mipmap/icon_right_arrow"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         />

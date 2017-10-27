@@ -237,6 +237,8 @@ dependencies {
     // 此处以 jshare-facebookmodel 1.3.0 版本为例，具体版本请参考压缩包 libs 的 jar 包版本。
     compile 'cn.jiguang.sdk:jcore:1.1.5'  // 此处以 JCore 1.1.5 版本为例，具体版本请参考压缩包 libs 的 jar 包版本。
 
+    compile 'com.shizhefei:ViewPagerIndicator:1.1.6'
+
 }
 
 //App 虚拟内存分区 dex文件

@@ -20,8 +20,18 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
                 android:background="@color/white"
-                android:padding="25dp"
                 >
+
+                <ImageButton
+                    android:id="@+id/back_ibtn"
+                    android:layout_width="@dimen/topbar_size"
+                    android:layout_height="@dimen/topbar_size"
+                    android:src="@mipmap/icon_left"
+                    android:background="@drawable/laybeijin"
+                    android:scaleType="center"
+                    android:layout_centerVertical="true"
+                    />
+
 
                 <TextView
                     android:id="@+id/textView"
@@ -30,7 +40,9 @@
                     android:layout_centerHorizontal="true"
                     android:layout_centerVertical="true"
                     android:text="收款金额"
-                    android:textSize="@dimen/title_size" />
+                    android:textSize="@dimen/text_size20"
+                    android:padding="20dp"
+                    />
 
             </RelativeLayout>
 
@@ -50,10 +62,29 @@
 
 
                 <TextView
-                    android:id="@+id/tvInputView"
-                    android:layout_width="match_parent"
+                    android:id="@+id/tvMoneyLogo"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/count_tv"
+                    android:background="@color/lucency"
+                    android:gravity="right"
+                    android:paddingTop="25dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="55sp"
+                    android:textStyle="bold"
+                    android:typeface="serif"
+                    android:text="￥"
+                    android:layout_toLeftOf="@+id/tvInputView"
+                    />
+
+
+                <TextView
+                    android:id="@+id/tvInputView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/count_tv"
+                    android:layout_alignParentRight="true"
                     android:background="@color/lucency"
                     android:gravity="right"
                     android:hint="0.00"

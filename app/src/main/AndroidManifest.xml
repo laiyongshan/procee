@@ -167,6 +167,19 @@
         <activity android:name=".ui.changepassword.ChangePasswordActivity"
             android:screenOrientation="portrait"
             />
+
+        <activity android:name=".ui.setting.SettingActivity"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".ui.changephone.ChangePhoneActivity"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".ui.bankcard.MyBankCardActivity"
+            android:screenOrientation="portrait"
+            />
+
     </application>
 
 </manifest>

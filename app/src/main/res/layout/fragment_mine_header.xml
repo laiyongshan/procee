@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/size_default_height"
         android:scaleType="fitXY"
-        android:src="@drawable/img_header" />
+        android:src="#f6f6f6"
+         />
 
 
     <LinearLayout

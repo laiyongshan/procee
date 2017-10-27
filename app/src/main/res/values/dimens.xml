@@ -40,5 +40,6 @@
 
     <dimen name="POSMAIN_TOP_HEIGHT">40dp</dimen>
 
+    <dimen name="tab_top_fontsize">16sp</dimen>
 
 </resources>

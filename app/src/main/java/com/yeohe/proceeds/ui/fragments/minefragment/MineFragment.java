@@ -7,24 +7,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.ccj.base.base.BaseFragment;
 import com.yeohe.proceeds.R;
-import com.yeohe.proceeds.adapter.MineAdapter;
+import com.yeohe.proceeds.adapter.ItemAdapter;
+import com.yeohe.proceeds.ui.bankcard.MyBankCardActivity;
+import com.yeohe.proceeds.ui.setting.SettingActivity;
 import com.yeohe.proceeds.ui.gesture.GestureActivity;
-import com.yeohe.proceeds.ui.gesture.SecondActivity;
 import com.yeohe.proceeds.ui.login.LoginActivity;
+import com.yeohe.proceeds.ui.other.HelpActivity;
 import com.yeohe.proceeds.ui.register.RegisterActivity;
 import com.yeohe.proceeds.widgets.ParallaxScollListView;
 
-import java.util.ArrayList;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 
 /**
  * Created by Administrator on 2017/10/16.
@@ -71,12 +68,12 @@ public class MineFragment extends BaseFragment {
         final Class[] classes = new Class[]{
                 RegisterActivity.class,
                 GestureActivity.class,
-                LoginActivity.class,
-                LoginActivity.class,
-                GestureActivity.class
+                MyBankCardActivity.class,
+                HelpActivity.class,
+                SettingActivity.class
         };
 
-        mListView.setAdapter(new MineAdapter(getActivity(), titls, classes));
+        mListView.setAdapter(new ItemAdapter(getActivity(), titls, classes));
 
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override

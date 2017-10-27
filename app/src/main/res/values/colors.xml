@@ -44,4 +44,6 @@
     <color name="red_color">#FF0000</color>
     <color name="blue_color">#0000ff</color>
 
+    <color name="tab_main_text_2">#74b5f7</color>
+
 </resources>

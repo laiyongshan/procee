@@ -1,34 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:rv="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical">
+    android:background="@color/white">
 
-
-    <include layout="@layout/item_title1" />
-
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:background="@color/lucency"
-        android:hint="请输入新手机号"
-        android:padding="@dimen/activity_top_pading" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/gray" />
+    <include
+        layout="@layout/item_title1"
+        />
 
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
-        android:padding="@dimen/activity_top_pading">
+        android:paddingLeft="@dimen/activity_top_pading"
+        android:paddingRight="@dimen/activity_top_pading"
+        android:layout_marginTop="16dp"
+        >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="验证码"
+            android:layout_centerVertical="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size16"
+            />
+
 
 
         <EditText
@@ -37,10 +38,14 @@
             android:layout_centerVertical="true"
             android:background="@color/lucency"
             android:hint="请输入验证码"
-            android:layout_toLeftOf="@+id/get_vercode_tv"
+            android:layout_toLeftOf="@+id/view1"
+            android:paddingRight="10dp"
+            android:gravity="right"
+            android:textSize="@dimen/text_size18"
             />
 
         <View
+            android:id="@+id/view1"
             android:layout_width="1.5dp"
             android:layout_height="30dp"
             android:layout_centerVertical="true"
@@ -63,14 +68,15 @@
             rv:rv_backgroundPressColor="@color/lucency"
             rv:rv_cornerRadius="5dp" />
 
-
     </RelativeLayout>
 
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="@color/gray" />
+        android:background="@color/gray"
+        android:layout_margin="@dimen/activity_right_pading"
+        />
 
 
     <com.flyco.roundview.RoundTextView
@@ -82,12 +88,11 @@
         android:gravity="center"
         android:padding="12dp"
         android:singleLine="true"
-        android:text="提交修改"
+        android:text="下一步"
         android:textColor="@color/white"
         android:textSize="@dimen/text_size18"
         rv:rv_backgroundColor="@color/colorPrimary"
         rv:rv_backgroundPressColor="@color/lucency"
         rv:rv_cornerRadius="5dp" />
-
 
 </LinearLayout>

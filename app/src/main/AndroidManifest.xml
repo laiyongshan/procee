@@ -180,6 +180,10 @@
             android:screenOrientation="portrait"
             />
 
+        <activity android:name=".ui.other.NumKeyBortActivity2"
+            android:screenOrientation="portrait"
+            />
+
     </application>
 
 </manifest>

@@ -1,23 +1,21 @@
-package com.yeohe.proceeds.ui.changepassword;
+package com.yeohe.proceeds.ui.other;
 
 import android.graphics.Color;
 import android.os.Bundle;
 
-import com.alibaba.android.arouter.facade.annotation.Route;
 import com.ccj.base.base.BaseActivity;
-import com.ccj.base.utils.router.RouterConstants;
 import com.yeohe.proceeds.R;
 
 import qiu.niorgai.StatusBarCompat;
 
 /**
- * Created by Administrator on 2017/10/24.
+ * Created by Administrator on 2017/10/27.
  */
-@Route(path = RouterConstants.FORGET_PASSWORD_ACTIVITY)
-public class ChangePasswordActivity extends BaseActivity {
+
+public class VerifyPasswordActivity extends BaseActivity {
     @Override
     public void beforeInitView() {
-        setContentView(R.layout.activity_change_password);
+        setContentView(R.layout.activity_verify_password);
         //add alpha to color
         StatusBarCompat.setStatusBarColor(this, Color.argb(255,00,00,00));
     }
@@ -25,5 +23,12 @@ public class ChangePasswordActivity extends BaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
     }
+
+
+    public void initView(){
+
+    }
+
 }

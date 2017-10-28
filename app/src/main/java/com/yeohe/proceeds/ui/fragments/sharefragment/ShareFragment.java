@@ -108,8 +108,7 @@ public class ShareFragment extends BaseFragment {
         public void onError(Platform platform, int action, int errorCode, Throwable error) {
             if(handler != null) {
                 Message message = handler.obtainMessage();
-                message.obj = "分享失败:" + (error != null ? error.getMessage() : "")+errorCode+JShareInterface.isClientValid(QQ.Name);
-                Toast.makeText(getActivity(),JShareInterface.getPlatformList().size()+"",Toast.LENGTH_LONG).show();
+                message.obj = "分享失败:" + (error != null ? error.getMessage() : "");
                 handler.sendMessage(message);
             }
         }

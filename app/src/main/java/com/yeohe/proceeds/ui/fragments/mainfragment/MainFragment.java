@@ -24,6 +24,7 @@ import com.yeohe.proceeds.R;
 import com.yeohe.proceeds.adapter.TypeAdapter;
 import com.yeohe.proceeds.ui.gesture.GestureActivity;
 import com.yeohe.proceeds.ui.other.NumKeyBortActivity;
+import com.yeohe.proceeds.ui.other.NumKeyBortActivity2;
 import com.yeohe.proceeds.ui.other.PasswordInputActivity;
 import com.yeohe.proceeds.utils.StringUtils;
 import com.yeohe.proceeds.utils.ToastUtil;
@@ -129,7 +130,7 @@ public class MainFragment extends BaseFragment<MainFragmentContract.Prasenter> i
                             break;
 
                         case 1://扫码收款
-                            startActivity(new Intent(getActivity(),GestureActivity.class));
+                            startActivity(new Intent(getActivity(),NumKeyBortActivity2.class));
                             break;
 
                         case 2://快捷收款
@@ -141,7 +142,7 @@ public class MainFragment extends BaseFragment<MainFragmentContract.Prasenter> i
         );
 
         biv_mian_message.showCirclePointBadge();
-        biv_mian_message.setPadding(10,10,10,10);
+        biv_mian_message.setPadding(10,15,15,10);
 
 
         date_tv.setText(StringUtils.StringData());

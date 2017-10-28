@@ -59,8 +59,8 @@
         android:layout_gravity="center"
         android:background="@color/white"
         app:color_error_ring="#e91515"
-        app:color_on_ring="#64a460"
-        app:color_up_ring="#3ce915"
+        app:color_on_ring="@color/colorPrimary"
+        app:color_up_ring="@color/colorPrimary"
         app:inner_background_width="19dp"
         app:inner_ring_width="14dp"
         app:outer_ring_spacing_width="50dp" />

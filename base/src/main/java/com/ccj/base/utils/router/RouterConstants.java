@@ -25,6 +25,7 @@ public final class RouterConstants {
      * */
     public static final String REGISTER_MODULE_NAME="/register/";
     public static final String REGISTER_MODULE_ACTIVITY=REGISTER_MODULE_NAME+"RegisterActivity";
+    public static final String REGISTER_SETPSW_ACTIVITY=REGISTER_MODULE_NAME+"/SetPasswordActivity/";
 
 
     /**
@@ -89,6 +90,12 @@ public final class RouterConstants {
      * 收款
      * */
     public static final String NUMKEYBOART_ACTIVITY="/NumKeyBortActivity/";
+
+
+    /**
+     * 二维码收款
+     * */
+    public static final String QRCODE_MODULE_ACTIVITY="/QRPayActivity/";
 
 
 }

@@ -1,5 +1,6 @@
 package com.yeohe.proceeds.ui.other;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Message;
 import android.view.KeyEvent;
@@ -10,6 +11,7 @@ import com.ccj.base.base.BaseActivity;
 import com.yeohe.proceeds.R;
 import org.xutils.common.util.LogUtil;
 import butterknife.BindView;
+import qiu.niorgai.StatusBarCompat;
 
 /**
  * Created by Administrator on 2017/10/19.
@@ -21,6 +23,8 @@ public class PasswordInputActivity extends BaseActivity {
     public void beforeInitView() {
         final PasswordView pwdView = new PasswordView(this);
         setContentView(pwdView);
+        //add alpha to color
+        StatusBarCompat.setStatusBarColor(this, Color.argb(255,00,00,00));
 
         //添加密码输入完成的响应
         pwdView.setOnFinishInput(new OnPasswordInputFinish() {
@@ -29,7 +33,6 @@ public class PasswordInputActivity extends BaseActivity {
                 //输入完成后我们简单显示一下输入的密码
                 Toast.makeText(PasswordInputActivity.this, pwdView.getStrPassword(), Toast.LENGTH_SHORT).show();
 //                map.put("passwordpin",pwdView.getStrPassword());//输入的密码
-
             }
         });
 

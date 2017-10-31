@@ -63,7 +63,13 @@
             android:textSize="14sp"
             rv:rv_backgroundColor="@color/colorPrimary"
             rv:rv_backgroundPressColor="@color/lucency"
+            rv:rv_isRadiusHalfHeight="false"
+            rv:rv_isRippleEnable="false"
             rv:rv_cornerRadius="5dp"
+            rv:rv_strokeColor="@color/colorPrimary"
+            rv:rv_strokePressColor="@color/lucency"
+            rv:rv_strokeWidth="1dp"
+            rv:rv_textPressColor="#ffffff"
             android:padding="10dp"
             />
 
@@ -79,7 +85,7 @@
 
 
     <com.flyco.roundview.RoundTextView
-        android:id="@+id/rtv_3"
+        android:id="@+id/register_next_rtv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="25dp"
@@ -92,6 +98,13 @@
         android:textSize="@dimen/text_size18"
         rv:rv_backgroundColor="@color/colorPrimary"
         rv:rv_backgroundPressColor="@color/lucency"
-        rv:rv_cornerRadius="5dp"/>
+        rv:rv_isRadiusHalfHeight="false"
+        rv:rv_isRippleEnable="false"
+        rv:rv_cornerRadius="5dp"
+        rv:rv_strokeColor="@color/colorPrimary"
+        rv:rv_strokePressColor="@color/lucency"
+        rv:rv_strokeWidth="1dp"
+        rv:rv_textPressColor="#ffffff"
+        />
 
 </LinearLayout>

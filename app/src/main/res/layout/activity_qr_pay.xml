@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:rv="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical">
-
-    <include layout="@layout/item_title2" />
+    android:id="@+id/main_body_layout"
+    >
 
 
     <ScrollView
@@ -15,51 +14,138 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/white"
             android:orientation="vertical">
 
 
+            <RelativeLayout
+                android:id="@+id/item_title2_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/lucency"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                >
 
 
-            <LinearLayout
+                <ImageButton
+                    android:id="@+id/back_ibtn"
+                    android:layout_width="@dimen/topbar_size"
+                    android:layout_height="@dimen/topbar_size"
+                    android:background="@color/lucency"
+                    android:scaleType="center"
+                    android:src="@mipmap/icon_back" />
+
+
+                <TextView
+                    android:id="@+id/title_tv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center"
+                    android:text="标题二"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size22" />
+
+
+                <ImageButton
+                    android:id="@+id/help_ibtn"
+                    android:layout_width="@dimen/topbar_size"
+                    android:layout_height="@dimen/topbar_size"
+                    android:background="@color/lucency"
+                    android:scaleType="center"
+                    android:src="@mipmap/wenhao_01"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    />
+
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/white"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
+                android:layout_marginTop="15dp"
+                >
 
-
-                <RelativeLayout
+                <TextView
+                    android:id="@+id/pay_money_tv"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginRight="24dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@color/white"
-                    android:minHeight="280dp"
-                    android:minWidth="280dp">
-                    
-                    
+                    android:textColor="@color/white"
+                    android:textSize="35sp"
+                    android:drawableLeft="@drawable/shoukuan"
+                    android:drawablePadding="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="500.00"
+                    />
 
-                </RelativeLayout>
+
+                <com.flyco.roundview.RoundRelativeLayout
+                    android:id="@+id/qr_layout"
+                    android:layout_width="240dp"
+                    android:layout_height="240dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:paddingBottom="10dp"
+                    rv:rv_backgroundColor="@color/white"
+                    rv:rv_cornerRadius="13dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/pay_money_tv"
+                    >
+
+
+                    <ImageView
+                        android:id="@+id/pay_qr_code_img"
+                        android:layout_width="220dp"
+                        android:layout_height="220dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/white"
+                        android:scaleType="fitCenter"
+                        android:src="@mipmap/qrcode"
+                        />
+
+                </com.flyco.roundview.RoundRelativeLayout>
+
+
+                <com.flyco.roundview.RoundTextView
+                    android:id="@+id/rtv_3"
+                    android:layout_width="240dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/qr_layout"
+                    android:layout_centerHorizontal="true"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:padding="12dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="10dp"
+                    android:singleLine="true"
+                    android:text="查询收款"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size16"
+                    rv:rv_backgroundColor="@color/white"
+                    rv:rv_backgroundPressColor="@color/lucency"
+                    rv:rv_cornerRadius="6dp" />
 
 
                 <ImageView
                     android:id="@+id/scan_pay_bg"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="120dp"
                     android:layout_alignParentBottom="true"
+                    android:layout_below="@+id/rtv_3"
                     android:layout_centerHorizontal="true"
                     android:padding="10dp"
                     android:scaleType="fitCenter"
                     android:src="@drawable/scan_pay_bg" />
 
-
-            </LinearLayout>
+            </RelativeLayout>
 
         </LinearLayout>
 
     </ScrollView>
-
 
 </LinearLayout>

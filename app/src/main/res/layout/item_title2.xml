@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@color/white"
-    android:paddingTop="12dp"
-    android:paddingBottom="12dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
     android:id="@+id/item_title2_layout"
     >
 
@@ -17,7 +17,6 @@
         android:src="@mipmap/icon_left"
         android:background="@drawable/laybeijin"
         android:scaleType="center"
-
         />
 
 

@@ -67,7 +67,8 @@ public class MainFragment extends BaseFragment<MainFragmentContract.Prasenter> i
     @BindView(R.id.date_tv)
     TextView date_tv;
 
-
+    @BindView(R.id.hello_tv)
+    TextView hello_tv;
 
     private ArrayList<Integer> funcation_types;
     private TypeAdapter funcation_type_adapter;
@@ -94,7 +95,7 @@ public class MainFragment extends BaseFragment<MainFragmentContract.Prasenter> i
         return view;
     }
 
-    @OnClick({R.id.btn1,R.id.biv_main_message})
+    @OnClick({R.id.btn1,R.id.biv_main_message,R.id.hello_tv})
     public void click(View v){
         switch (v.getId()){
             case R.id.btn1:
@@ -103,6 +104,10 @@ public class MainFragment extends BaseFragment<MainFragmentContract.Prasenter> i
 
             case R.id.biv_main_message:
                 RouterUtils.navigation(RouterConstants.MESSAGE_ACTIVITY);
+                break;
+
+            case R.id.hello_tv:
+                RouterUtils.navigation(RouterConstants.LOGIN_MOUDLE_ACTIVITY);
                 break;
         }
     }

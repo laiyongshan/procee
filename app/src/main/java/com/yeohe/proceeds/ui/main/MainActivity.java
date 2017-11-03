@@ -44,7 +44,7 @@ public class MainActivity extends BaseActivity implements MainContract.View{
         NavigationController navigationController = tab.custom()
                 .addItem(newItem(R.mipmap.tab_store_normal,R.mipmap.tab_store_selected,"首页"))
                 .addItem(newItem(R.drawable.ic_favorite_gray_24dp,R.drawable.ic_favorite_teal_24dp,"分享"))
-                .addItem(newItem(R.drawable.ic_nearby_gray_24dp,R.drawable.ic_nearby_teal_24dp,"我的"))
+                .addItem(newItem(R.mipmap.icon_my_default,R.mipmap.icon_my_pressed,"我的"))
                 .build();
 
         tab.setPadding(0,15,0,0);
@@ -60,6 +60,7 @@ public class MainActivity extends BaseActivity implements MainContract.View{
 
         //设置显示小圆点
         navigationController.setHasMessage(0,true);
+
     }
 
     @Override
@@ -106,7 +107,7 @@ public class MainActivity extends BaseActivity implements MainContract.View{
         SpecialTab mainTab = new SpecialTab(this);
         mainTab.initialize(drawable,checkedDrawable,text);
         mainTab.setTextDefaultColor(0xFF888888);
-        mainTab.setTextCheckedColor(0xFF009688);
+        mainTab.setTextCheckedColor(0xFF3EACFF);
         return mainTab;
     }
 

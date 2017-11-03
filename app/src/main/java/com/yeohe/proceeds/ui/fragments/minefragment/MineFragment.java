@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 
+import com.bigkoo.pickerview.TimePickerView;
 import com.ccj.base.base.BaseFragment;
 import com.yeohe.proceeds.R;
 import com.yeohe.proceeds.adapter.ItemAdapter;
@@ -18,7 +19,13 @@ import com.yeohe.proceeds.ui.gesture.GestureActivity;
 import com.yeohe.proceeds.ui.login.LoginActivity;
 import com.yeohe.proceeds.ui.other.HelpActivity;
 import com.yeohe.proceeds.ui.register.RegisterActivity;
+import com.yeohe.proceeds.ui.tranrecords.TranRecordsActivity;
+import com.yeohe.proceeds.utils.ToastUtil;
 import com.yeohe.proceeds.widgets.ParallaxScollListView;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -67,7 +74,7 @@ public class MineFragment extends BaseFragment {
 
         final Class[] classes = new Class[]{
                 RegisterActivity.class,
-                GestureActivity.class,
+                TranRecordsActivity.class,
                 MyBankCardActivity.class,
                 HelpActivity.class,
                 SettingActivity.class
@@ -82,7 +89,7 @@ public class MineFragment extends BaseFragment {
                     startActivity(new Intent(getActivity(), classes[position - 1]));
             }
         });
-
     }
+
 
 }

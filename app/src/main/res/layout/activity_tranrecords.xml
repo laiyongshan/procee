@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:rv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/item_title2" />
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@color/gray" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="@dimen/activity_bottom_margin"
+                android:paddingTop="@dimen/activity_bottom_margin"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="结算方式"
+                    android:textColor="@color/black"
+                    android:drawableLeft="@mipmap/icon_shuxian"
+                    android:gravity="center_vertical"
+                    />
+
+
+                <com.yeohe.proceeds.widgets.TrandViewGroup
+                    android:id="@+id/cleaning_viewGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                </com.yeohe.proceeds.widgets.TrandViewGroup>
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/gray" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+                <!--交易方式-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/activity_bottom_margin"
+                    android:paddingTop="@dimen/activity_bottom_margin"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="交易方式"
+                        android:textColor="@color/black"
+                        android:drawableLeft="@mipmap/icon_shuxian"
+                        android:gravity="center_vertical"
+                        />
+
+
+                    <com.yeohe.proceeds.widgets.TrandViewGroup
+                        android:id="@+id/trand_viewGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+                    </com.yeohe.proceeds.widgets.TrandViewGroup>
+
+
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:layout_marginBottom="@dimen/activity_bottom_pading"
+                    android:layout_marginTop="@dimen/activity_top_pading"
+                    android:background="@color/gray" />
+
+                <!--结算状态-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/activity_bottom_margin"
+                    android:paddingTop="@dimen/activity_bottom_margin"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="结算状态"
+                        android:textColor="@color/black"
+                        android:drawableLeft="@mipmap/icon_shuxian"
+                        android:gravity="center_vertical"
+                        />
+
+
+                    <com.yeohe.proceeds.widgets.TrandViewGroup
+                        android:id="@+id/status_viewGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+                    </com.yeohe.proceeds.widgets.TrandViewGroup>
+
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:layout_marginBottom="@dimen/activity_bottom_pading"
+                    android:layout_marginTop="@dimen/activity_top_pading"
+                    android:background="@color/gray" />
+
+                <!--起始时间-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/activity_bottom_margin"
+                    android:paddingTop="@dimen/activity_bottom_margin"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="起止时间"
+                        android:textColor="@color/black"
+                        android:drawableLeft="@mipmap/icon_shuxian"
+                        android:gravity="center_vertical"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:weightSum="2"
+                        android:layout_marginTop="16dp"
+                        >
+
+
+                        <TextView
+                            android:id="@+id/start_time_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="请选择起始时间"
+                            android:gravity="center"
+                            android:textSize="@dimen/text_size18"
+                            android:textColor="@color/colorPrimary"
+                            />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="至"
+                            android:textSize="20sp"
+                            android:textColor="@color/black"
+                            />
+
+
+                        <TextView
+                            android:id="@+id/over_time_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="请选择起始时间"
+                            android:gravity="center"
+                            android:textSize="@dimen/text_size18"
+                            android:textColor="@color/colorPrimary"
+                            />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.0dp"
+                    android:layout_marginBottom="@dimen/activity_bottom_pading"
+                    android:layout_marginTop="@dimen/activity_top_margin"
+                    android:background="@color/gray" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    android:gravity="center">
+
+                    <com.flyco.roundview.RoundTextView
+                        android:id="@+id/reset_rtv"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="50dp"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="重    置"
+                        android:textColor="@color/gray_btn_bg_color"
+                        android:textSize="16sp"
+                        rv:rv_backgroundColor="@color/white"
+                        rv:rv_backgroundPressColor="@color/lucency"
+                        rv:rv_cornerRadius="5dp"
+                        rv:rv_isRadiusHalfHeight="false"
+                        rv:rv_isRippleEnable="false"
+                        rv:rv_strokeColor="@color/colorPrimary"
+                        rv:rv_strokePressColor="@color/lucency"
+                        rv:rv_strokeWidth="1dp"
+                        rv:rv_textPressColor="#ffffff" />
+
+                    <com.flyco.roundview.RoundTextView
+                        android:id="@+id/make_sure_rtv"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="确    认"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        rv:rv_backgroundColor="@color/colorPrimary"
+                        rv:rv_backgroundPressColor="@color/lucency"
+                        rv:rv_cornerRadius="5dp"
+                        rv:rv_isRadiusHalfHeight="false"
+                        rv:rv_isRippleEnable="false"
+                        rv:rv_strokeColor="@color/colorPrimary"
+                        rv:rv_strokePressColor="@color/lucency"
+                        rv:rv_strokeWidth="1dp"
+                        rv:rv_textPressColor="#ffffff" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

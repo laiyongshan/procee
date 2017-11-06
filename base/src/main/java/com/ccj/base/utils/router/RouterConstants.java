@@ -98,4 +98,18 @@ public final class RouterConstants {
     public static final String QRCODE_MODULE_ACTIVITY="/QRPayActivity/";
 
 
+    /**
+     * 交易记录模块
+     * */
+    public static final String TRANDS_RECORDS_MOUDLE="/trands/";
+    public static final String TRANDS_RECORDS_ACTIVTY=TRANDS_RECORDS_MOUDLE+"TranRecordsActivity";
+    public static final String RECORDS_DETAIL_ACTIVITY=TRANDS_RECORDS_MOUDLE+"RecordsDetailActivity";
+
+
+    /**
+     * 服务费率
+     * */
+    public static final String SERVICE_RATE_MODULE="/therate/";
+    public static final String SERVICE_RATE_ACTIVITY=SERVICE_RATE_MODULE+"ServiceRateActivity";
+
 }

@@ -12,6 +12,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.ccj.base.AppManager;
 import com.ccj.base.R;
@@ -20,6 +23,7 @@ import com.ccj.base.utils.NetUtils;
 import com.ccj.base.utils.router.RouterConstants;
 import org.greenrobot.eventbus.EventBus;
 import java.util.List;
+import java.util.logging.Logger;
 
 import butterknife.ButterKnife;
 import cn.pedant.SweetAlert.SweetAlertDialog;
@@ -57,6 +61,24 @@ public abstract class BaseActivity<T extends BasePresenter>
                     .show();
 
         };
+    }
+
+    /**
+     * sometime you want to define back event
+     */
+    protected void setBackBtn(ImageButton back) {
+        if (back != null) {
+            back.setVisibility(View.VISIBLE);
+            back.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
+        }else {
+
+        }
+
     }
 
 

@@ -76,8 +76,8 @@ public class AppApplication extends BaseApplication {
                 .setAllTipTextSize(14)
                 .setReloadButtonText("点我重试哦")
                 .setReloadButtonTextSize(14)
-                .setReloadButtonWidthAndHeight(150, 40)
-                .setAllPageBackgroundColor(R.color.background);
+                .setReloadButtonWidthAndHeight(150, 40);
+//                .setAllPageBackgroundColor(R.color.background);
     }
 
 
@@ -98,7 +98,6 @@ public class AppApplication extends BaseApplication {
             ARouter.printStackTrace(); // 打印日志的时候打印线程堆栈
         }
         ARouter.init(this); // 尽可能早，推荐在Application中初始化
-
     }
 
 

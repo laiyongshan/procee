@@ -1,1 +1,1 @@
-include ':app', ':base', ':loadinglib'
+include ':app', ':base', ':loadinglib', ':sdklibrary'

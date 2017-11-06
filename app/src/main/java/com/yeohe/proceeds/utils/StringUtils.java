@@ -191,6 +191,17 @@ public class StringUtils {
     }
 
 
+    //显示银行卡号
+	public static String showBankCardNum(String strNum){
+		StringBuilder s=new StringBuilder(strNum);
+		if(s.length()>=7){
+			s.replace(3, s.length()-3, "******");
+			return s.toString();
+		}
+		return s.toString();
+	}
+
+
 	//检查输入的手机号码是不是11位
 	public static boolean isPhoneNum(String phoneNum){
 		if(phoneNum.length()==11){

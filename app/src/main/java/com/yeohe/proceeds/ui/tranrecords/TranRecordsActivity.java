@@ -1,5 +1,6 @@
 package com.yeohe.proceeds.ui.tranrecords;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -7,8 +8,11 @@ import android.widget.TextView;
 
 import com.bigkoo.pickerview.TimePickerView;
 import com.ccj.base.base.BaseActivity;
+import com.ccj.base.utils.router.RouterConstants;
+import com.ccj.base.utils.router.RouterUtils;
 import com.flyco.roundview.RoundTextView;
 import com.yeohe.proceeds.R;
+import com.yeohe.proceeds.ui.toaccount.ToAccountActivity;
 import com.yeohe.proceeds.utils.ToastUtil;
 import com.yeohe.proceeds.widgets.TrandViewGroup;
 
@@ -128,10 +132,13 @@ public class TranRecordsActivity extends BaseActivity implements TrandViewGroup.
             case R.id.reset_rtv://重置
                 times[0].setText("");
                 times[1].setText("");
+
+                startActivity(new Intent(TranRecordsActivity.this, ToAccountActivity.class));
+
                 break;
 
             case R.id.make_sure_rtv://确定
-                LogUtil.i("确定:"+chooseID1+"\n"+chooseID2+"\n"+chooseID3);
+                RouterUtils.navigation(RouterConstants.RECORDS_DETAIL_ACTIVITY);
                 break;
         }
     }

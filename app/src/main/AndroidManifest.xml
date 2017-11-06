@@ -196,6 +196,18 @@
             android:screenOrientation="portrait"
             />
 
+        <activity android:name=".ui.tranrecords.RecordsDetailActivity"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".ui.toaccount.ToAccountActivity"
+            android:screenOrientation="portrait"
+            />
+
+        <activity android:name=".ui.therate.ServiceRateActivity"
+            android:screenOrientation="portrait"
+            />
+
 
     </application>
 

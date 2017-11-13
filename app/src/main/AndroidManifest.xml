@@ -41,6 +41,10 @@
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
     <uses-permission android:name="android.permission.GET_TASKS" />
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+
 
     <supports-screens android:smallScreens="false"
         android:normalScreens="false"
@@ -204,10 +208,15 @@
             android:screenOrientation="portrait"
             />
 
+
         <activity android:name=".ui.therate.ServiceRateActivity"
             android:screenOrientation="portrait"
             />
 
+        <!--扫描二维码/条形码-->
+        <activity android:name=".ui.scan.ScanCodeActivity"
+            android:screenOrientation="portrait"
+            />
 
     </application>
 

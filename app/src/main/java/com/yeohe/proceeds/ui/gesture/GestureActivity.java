@@ -1,6 +1,7 @@
 package com.yeohe.proceeds.ui.gesture;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +17,7 @@ import com.yeohe.proceeds.utils.ToastUtil;
 
 import butterknife.BindView;
 import butterknife.OnClick;
+import qiu.niorgai.StatusBarCompat;
 
 /**
  * Created by Administrator on 2017/10/17.

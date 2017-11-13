@@ -1,10 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    style="@style/MatchMatch"
-    android:background="@color/white"
-    android:orientation="vertical">
+<?xml version="1.0" encoding="utf-8"?><!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"--><!----><!--style="@style/MatchMatch"--><!--android:background="@color/white"--><!--android:orientation="vertical">-->
 
+
+<!--<ScrollView--><!--android:layout_width="match_parent"--><!--android:layout_height="match_parent"--><!--android:scrollbars="none">-->
+
+<!--<LinearLayout--><!--style="@style/MatchMatch"--><!--android:orientation="vertical"--><!--android:paddingTop="16dp"--><!--&gt;-->
+
+
+<cn.bingoogolapple.refreshlayout.BGARefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_normalview_refresh"
+    android:background="@color/white"
+    style="@style/MatchMatch"
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -12,196 +19,181 @@
         android:scrollbars="none">
 
         <LinearLayout
-            style="@style/MatchMatch"
-            android:orientation="vertical"
-            android:paddingTop="16dp"
-            >
+            style="@style/MatchAuto"
+            android:orientation="vertical">
 
 
-            <cn.bingoogolapple.refreshlayout.BGARefreshLayout
-                android:id="@+id/rl_normalview_refresh"
-                style="@style/MatchMatch"
-                android:orientation="vertical">
+            <!--title-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="12dp">
+
+
+                <TextView
+                    android:id="@+id/hello_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="你好，请先登录"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size28" />
+
+
+                <TextView
+                    android:id="@+id/date_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/hello_tv"
+                    android:layout_marginTop="2dp"
+                    android:text="日期显示" />
+
+
+                <cn.bingoogolapple.badgeview.BGABadgeImageView
+                    android:id="@+id/biv_main_message"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/laybeijin"
+                    android:padding="10dp"
+                    android:scaleType="fitCenter"
+                    android:src="@mipmap/icon_message" />
+
+            </RelativeLayout>
+
+
+            <com.yeohe.proceeds.widgets.MyGridView
+                android:id="@+id/funcation_gv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/activity_bottom_margin"
+                android:background="@color/white"
+                android:gravity="center"
+                android:horizontalSpacing="8dp"
+                android:numColumns="4"
+                android:paddingBottom="26dp"
+                android:paddingTop="@dimen/activity_top_pading"
+                android:scrollbars="none"
+                android:verticalSpacing="5dp" />
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/gray" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="30dp"
+                android:weightSum="2">
+
 
                 <LinearLayout
-                    style="@style/MatchAuto"
-                    android:orientation="vertical">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
 
-
-                    <!--title-->
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_vertical"
-                        android:padding="12dp">
-
-
-                        <TextView
-                            android:id="@+id/hello_tv"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="你好，请先登录"
-                            android:textColor="@color/black"
-                            android:textSize="@dimen/text_size28" />
-
-
-                        <TextView
-                            android:id="@+id/date_tv"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/hello_tv"
-                            android:layout_marginTop="2dp"
-                            android:text="日期显示" />
-
-
-                        <cn.bingoogolapple.badgeview.BGABadgeImageView
-                            android:id="@+id/biv_main_message"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_alignParentRight="true"
-                            android:background="@drawable/laybeijin"
-                            android:padding="10dp"
-                            android:scaleType="fitCenter"
-                            android:src="@mipmap/icon_message" />
-
-                    </RelativeLayout>
-
-
-                    <com.yeohe.proceeds.widgets.MyGridView
-                        android:id="@+id/funcation_gv"
+                    <TextView
+                        android:id="@+id/tv1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="@dimen/activity_bottom_margin"
-                        android:background="@color/white"
+                        android:layout_marginRight="20dp"
+                        android:drawableLeft="@mipmap/icon_not_count"
+                        android:drawablePadding="10dp"
                         android:gravity="center"
-                        android:horizontalSpacing="8dp"
-                        android:numColumns="3"
-                        android:paddingTop="@dimen/activity_top_pading"
-                        android:paddingBottom="26dp"
-                        android:scrollbars="none"
-                        android:verticalSpacing="5dp" />
+                        android:text="未结算\n￥0.00" />
 
+                </LinearLayout>
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="10dp"
-                        android:background="@color/gray" />
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:background="#c0c0c0"
+                    android:padding="10dp" />
 
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="30dp"
-                        android:weightSum="2">
-
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            >
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:drawableLeft="@mipmap/icon_not_count"
-                                android:drawablePadding="10dp"
-                                android:gravity="center"
-                                android:text="未结算\n￥0.00"
-                                android:layout_marginRight="20dp"
-                                />
-
-                        </LinearLayout>
-
-                        <View
-                            android:layout_width="1dp"
-                            android:layout_height="match_parent"
-                            android:background="#c0c0c0"
-                            android:padding="10dp"
-                            />
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:gravity="center"
-                            >
-
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:drawableLeft="@mipmap/icon_count_today"
-                                android:drawablePadding="10dp"
-                                android:layout_marginLeft="20dp"
-                                android:gravity="center"
-                                android:layout_gravity="center"
-                                android:text="今日结算\n￥0.00" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-
-                    <!--<TextView-->
-                        <!--android:id="@+id/textView"-->
-                        <!--android:layout_width="wrap_content"-->
-                        <!--android:layout_height="wrap_content"-->
-                        <!--android:layout_marginTop="@dimen/activity_top_margin"-->
-                        <!--android:drawableLeft="@mipmap/icon_main_more"-->
-                        <!--android:drawablePadding="@dimen/activity_left_pading"-->
-                        <!--android:gravity="center_vertical"-->
-                        <!--android:paddingBottom="20dp"-->
-                        <!--android:paddingLeft="40dp"-->
-                        <!--android:paddingTop="10dp"-->
-                        <!--android:text="更多敬请期待" />-->
-
-
-                    <Button
-                        android:id="@+id/btn1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_horizontal"
-                        android:layout_margin="30dp"
-                        android:text="手势密码"
-                        android:textSize="30sp"
-                        android:visibility="gone" />
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="10dp"
-                        android:background="@color/gray" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center">
 
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="3dp"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginTop="12dp"
-                        android:text="热门推荐" />
-
-                    <cn.bingoogolapple.bgabanner.BGABanner
-                        android:id="@+id/banner_main_default"
-                        style="@style/BannerDefaultStyle"
-                        app:banner_indicatorGravity="bottom|right"
-                        app:banner_isNeedShowIndicatorOnOnlyOnePage="true"
-                        app:banner_isNumberIndicator="true"
-                        app:banner_numberIndicatorBackground="@drawable/shape_number_indicator_background"
-                        app:banner_numberIndicatorTextColor="@android:color/white"
-                        app:banner_numberIndicatorTextSize="10sp"
-                        app:banner_pointAutoPlayAble="true"
-                        app:banner_pointContainerBackground="@android:color/transparent"
-                        app:banner_transitionEffect="defaultEffect" />
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="20dp"
+                        android:drawableLeft="@mipmap/icon_count_today"
+                        android:drawablePadding="10dp"
+                        android:gravity="center"
+                        android:text="今日结算\n￥0.00" />
 
                 </LinearLayout>
 
-            </cn.bingoogolapple.refreshlayout.BGARefreshLayout>
+            </LinearLayout>
+
+
+            <!--<TextView-->
+            <!--android:id="@+id/textView"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="@dimen/activity_top_margin"-->
+            <!--android:drawableLeft="@mipmap/icon_main_more"-->
+            <!--android:drawablePadding="@dimen/activity_left_pading"-->
+            <!--android:gravity="center_vertical"-->
+            <!--android:paddingBottom="20dp"-->
+            <!--android:paddingLeft="40dp"-->
+            <!--android:paddingTop="10dp"-->
+            <!--android:text="更多敬请期待"/>-->
+
+
+            <Button
+                android:id="@+id/btn1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="30dp"
+                android:text="手势密码"
+                android:textSize="30sp"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/gray" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="12dp"
+                android:text="热门推荐" />
+
+            <cn.bingoogolapple.bgabanner.BGABanner
+                android:id="@+id/banner_main_default"
+                style="@style/BannerDefaultStyle"
+                app:banner_indicatorGravity="bottom|right"
+                app:banner_isNeedShowIndicatorOnOnlyOnePage="true"
+                app:banner_isNumberIndicator="true"
+                app:banner_numberIndicatorBackground="@drawable/shape_number_indicator_background"
+                app:banner_numberIndicatorTextColor="@android:color/white"
+                app:banner_numberIndicatorTextSize="10sp"
+                app:banner_pointAutoPlayAble="true"
+                app:banner_pointContainerBackground="@android:color/transparent"
+                app:banner_transitionEffect="defaultEffect" />
 
         </LinearLayout>
     </ScrollView>
 
+</cn.bingoogolapple.refreshlayout.BGARefreshLayout>
 
-</LinearLayout>
+    <!--</LinearLayout>--><!--</ScrollView>-->
+
+
+    <!--</LinearLayout>-->

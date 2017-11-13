@@ -60,7 +60,6 @@ public class MainActivity extends BaseActivity implements MainContract.View{
 
         //设置显示小圆点
         navigationController.setHasMessage(0,true);
-
     }
 
     @Override

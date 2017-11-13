@@ -30,7 +30,7 @@ android {
 
     defaultConfig {
         applicationId "com.yeohe.proceeds"
-        minSdkVersion 16
+        minSdkVersion 17
         targetSdkVersion 25
         versionCode 1
         versionName "1.0.0"
@@ -170,13 +170,11 @@ android {
 
     sourceSets { main { assets.srcDirs = ['src/main/assets'] } }
 
-
-
 }
 
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(include: ['*.jar','*.aar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -240,7 +238,21 @@ dependencies {
     compile 'cn.bingoogolapple:bga-qrcodecore:1.1.9@aar'
     compile 'cn.bingoogolapple:bga-zxing:1.1.9@aar'
     compile 'com.orhanobut:dialogplus:1.11@aar'
+
+    // -------------------- 以下三个库是二维码扫码必须依赖的 -------------------
+    compile 'com.google.zxing:core:3.3.0'
+    compile 'cn.bingoogolapple:bga-qrcodecore:1.1.9@aar'
+    compile 'cn.bingoogolapple:bga-zxing:1.1.9@aar'
+    // -------------------- 以上三个库是必须依赖的 ----------------------------
+
+    compile 'pub.devrel:easypermissions:1.0.0'
+    compile 'cn.bingoogolapple:bga-photopicker:1.2.3@aar'
+    compile 'cn.bingoogolapple:bga-adapter:1.2.0@aar'
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+
     compile project(':sdklibrary')
+
 }
 
 //App 虚拟内存分区 dex文件

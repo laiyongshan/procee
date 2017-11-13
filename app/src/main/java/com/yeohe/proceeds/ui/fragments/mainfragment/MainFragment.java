@@ -26,6 +26,7 @@ import com.yeohe.proceeds.ui.gesture.GestureActivity;
 import com.yeohe.proceeds.ui.other.NumKeyBortActivity;
 import com.yeohe.proceeds.ui.other.NumKeyBortActivity2;
 import com.yeohe.proceeds.ui.other.PasswordInputActivity;
+import com.yeohe.proceeds.ui.scan.ScanCodeActivity;
 import com.yeohe.proceeds.utils.StringUtils;
 import com.yeohe.proceeds.utils.ToastUtil;
 import com.yeohe.proceeds.widgets.MyGridView;
@@ -70,6 +71,9 @@ public class MainFragment extends BaseFragment<MainFragmentContract.Prasenter> i
     @BindView(R.id.hello_tv)
     TextView hello_tv;
 
+    @BindView(R.id.tv1)
+    TextView tv1;
+
     private ArrayList<Integer> funcation_types;
     private TypeAdapter funcation_type_adapter;
 
@@ -95,7 +99,7 @@ public class MainFragment extends BaseFragment<MainFragmentContract.Prasenter> i
         return view;
     }
 
-    @OnClick({R.id.btn1,R.id.biv_main_message,R.id.hello_tv})
+    @OnClick({R.id.btn1,R.id.biv_main_message,R.id.hello_tv,R.id.tv1})
     public void click(View v){
         switch (v.getId()){
             case R.id.btn1:
@@ -109,6 +113,10 @@ public class MainFragment extends BaseFragment<MainFragmentContract.Prasenter> i
             case R.id.hello_tv:
                 RouterUtils.navigation(RouterConstants.LOGIN_MOUDLE_ACTIVITY);
                 break;
+
+            case R.id.tv1:
+                startActivity(new Intent(getActivity(), GestureActivity.class));
+                break;
         }
     }
 
@@ -118,11 +126,12 @@ public class MainFragment extends BaseFragment<MainFragmentContract.Prasenter> i
         loadBannerData(mDefaultBanner,imgURLs.size());
 
         funcation_gv = (MyGridView) view.findViewById(R.id.funcation_gv);
-        String[] funcation_strArr = {"刷卡收款", "扫码收款", "快捷收款"};
+        String[] funcation_strArr = {"刷卡收款", "二维码收款", "快捷收款","扫一扫"};
         funcation_types = new ArrayList<Integer>();
         funcation_types.add(R.mipmap.main_icon_card);//刷卡收款
-        funcation_types.add(R.mipmap.main_icon_sweep);//扫码收款
+        funcation_types.add(R.mipmap.main_icon_sweep);//二维码收款
         funcation_types.add(R.mipmap.main_icon_pay);//快捷收款
+        funcation_types.add(R.mipmap.scan);//扫一扫收款
         funcation_type_adapter = new TypeAdapter(funcation_types, getActivity().getApplicationContext(), funcation_strArr, 1);
         funcation_gv.setAdapter(funcation_type_adapter);
         funcation_gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -141,6 +150,10 @@ public class MainFragment extends BaseFragment<MainFragmentContract.Prasenter> i
                         case 2://快捷收款
                             startActivity(new Intent(getActivity(), PasswordInputActivity.class));
                             break;
+
+                        case 3://扫一扫
+                            startActivity(new Intent(getActivity(), ScanCodeActivity.class));
+                            break;
                     }
                 }
             }
@@ -151,7 +164,6 @@ public class MainFragment extends BaseFragment<MainFragmentContract.Prasenter> i
 
 
         date_tv.setText(StringUtils.StringData());
-
     }
 
 
@@ -168,12 +180,12 @@ public class MainFragment extends BaseFragment<MainFragmentContract.Prasenter> i
         banner.setData(imgURLs, tips);
     }
 
-    protected void setListener() {
+    protected void setListener(){
         mDefaultBanner.setDelegate(this);
         mRefreshLayout.setDelegate(this);
     }
 
-    protected void processLogic(Bundle savedInstanceState) {
+    protected void processLogic(Bundle savedInstanceState){
         BGAStickinessRefreshViewHolder stickinessRefreshViewHolder = new BGAStickinessRefreshViewHolder(getActivity(), true);
         stickinessRefreshViewHolder.setStickinessColor(R.color.colorPrimary);
         stickinessRefreshViewHolder.setRotateImage(R.mipmap.bga_refresh_stickiness);
@@ -259,12 +271,10 @@ public class MainFragment extends BaseFragment<MainFragmentContract.Prasenter> i
 
     @Override
     public void showProgress() {
-
     }
 
     @Override
     public void hideProgress() {
-
     }
 
     @Override

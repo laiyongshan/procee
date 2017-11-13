@@ -31,7 +31,7 @@ public class TrandViewGroup<X extends TextView>  extends ViewGroup {
 
     private ArrayList<String> mTexts = new ArrayList<>();
     private Context mContext;
-    private int textModePadding = 45;
+    private int textModePadding = 40;
 
     //正常样式
     private float itemTextSize = 14;
@@ -237,7 +237,7 @@ public class TrandViewGroup<X extends TextView>  extends ViewGroup {
         }
         childView.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,
                 LayoutParams.WRAP_CONTENT));
-        childView.setWidth(180);
+        childView.setWidth(230);
         childView.setTextSize(itemTextSize);
         childView.setGravity(Gravity.CENTER);
         childView.setBackgroundResource(itemBGResNor);

@@ -8,9 +8,11 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.ccj.base.base.BaseActivity;
+import com.flyco.roundview.RoundTextView;
 import com.yeohe.proceeds.R;
 import org.xutils.common.util.LogUtil;
 import butterknife.BindView;
+import butterknife.OnClick;
 import qiu.niorgai.StatusBarCompat;
 
 /**
@@ -19,9 +21,14 @@ import qiu.niorgai.StatusBarCompat;
 
 public class PasswordInputActivity extends BaseActivity {
 
+    @BindView(R.id.complete_rtv)
+    RoundTextView complete_rtv;
+
+    private  PasswordView pwdView;
+
     @Override
     public void beforeInitView() {
-        final PasswordView pwdView = new PasswordView(this);
+        pwdView = new PasswordView(this);
         setContentView(pwdView);
         //add alpha to color
         StatusBarCompat.setStatusBarColor(this, Color.argb(255,00,00,00));
@@ -52,6 +59,19 @@ public class PasswordInputActivity extends BaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+    }
+
+    @OnClick({R.id.complete_rtv})
+    public void click(View view){
+        switch (view.getId()){
+            case R.id.complete_rtv:
+                if(pwdView.getStrPassword().trim().length()<6){
+                    Toast.makeText(PasswordInputActivity.this, "请输入6位完整密码", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(PasswordInputActivity.this, pwdView.getStrPassword(), Toast.LENGTH_LONG).show();
+                }
+                break;
+        }
     }
 
 

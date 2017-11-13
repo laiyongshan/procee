@@ -117,10 +117,7 @@ public class MyBankCardActivity extends BaseActivity {
             // 表示数据没变化不用更新.notifyDataChange的时候重新调用getViewForPage
             return PagerAdapter.POSITION_NONE;
         }
-
     }
-
-    ;
 
     /**
      * 根据dip值转化成px值
@@ -132,6 +129,5 @@ public class MyBankCardActivity extends BaseActivity {
         int size = (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dip, getResources().getDisplayMetrics());
         return size;
     }
-
 
 }

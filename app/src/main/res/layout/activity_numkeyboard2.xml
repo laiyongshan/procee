@@ -289,18 +289,23 @@
                             android:text="@string/NumberKeyDot"
                             android:textSize="25sp" />
 
-                        <Button
-                            android:id="@+id/button_back"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="0.5dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/laybeijin"
-                            android:focusable="false"
-                            android:padding="20dp"
-                            android:text="B"
-                            android:textColor="@color/black_color"
-                            android:textSize="25sp" />
+
+
+                            <ImageButton
+                                android:id="@+id/button_back"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="0.5dp"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:textColor="@color/black_color"
+                                android:textSize="25sp"
+                                android:text=" "
+                                android:background="@drawable/laybeijin"
+                                android:src="@mipmap/btn_delete"
+                                android:layout_centerInParent="true"
+                                />
+
 
                     </TableRow>
 

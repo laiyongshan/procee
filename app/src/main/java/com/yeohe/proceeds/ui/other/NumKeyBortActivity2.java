@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.launcher.ARouter;
@@ -26,11 +27,14 @@ public class NumKeyBortActivity2 extends BaseActivity {
 
     private StringBuffer mInputString = new StringBuffer("");
 
-    @BindViews({R.id.button1,R.id.button2,R.id.button3,R.id.button_back,
+    @BindViews({R.id.button1,R.id.button2,R.id.button3,
             R.id.button4,R.id.button5,R.id.button6,
             R.id.button7,R.id.button8,R.id.button9,
             R.id.button0,R.id.button_dot,R.id.aliPay_btn,R.id.wechatPay_btn})
     Button[] btns;
+
+    @BindView(R.id.button_back)
+    ImageButton button_back;
 
     @BindView(R.id.tvInputView)
     TextView tvInputView;
@@ -62,8 +66,13 @@ public class NumKeyBortActivity2 extends BaseActivity {
             @Override
             public void onClick(View v) {
                 try{
-                    Button b = (Button)v;
-                    NumKeyBortActivity2.this.onNumberClicked(b.getText().toString(),b.getId());
+                    if(v.getId()!=button_back.getId()) {
+                        Button b = (Button) v;
+                        NumKeyBortActivity2.this.onNumberClicked(b.getText().toString(), b.getId());
+                    }else{
+                        ImageButton b = (ImageButton) v;
+                        NumKeyBortActivity2.this.onNumberClicked("", b.getId());
+                    }
                 }
                 catch(Exception ex){
                     ex.printStackTrace();
@@ -75,6 +84,8 @@ public class NumKeyBortActivity2 extends BaseActivity {
         for (Button btn:btns){
             btn.setOnClickListener(btnNumOnClickListener);
         }
+
+        button_back.setOnClickListener(btnNumOnClickListener);//回退一位
     }
 
 

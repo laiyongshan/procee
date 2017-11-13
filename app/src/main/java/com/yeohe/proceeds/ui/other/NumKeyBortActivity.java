@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -28,11 +29,14 @@ public class NumKeyBortActivity extends BaseActivity {
 
     private StringBuffer mInputString = new StringBuffer("");
 
-        @BindViews({R.id.button1,R.id.button2,R.id.button3,R.id.button_back,
+        @BindViews({R.id.button1,R.id.button2,R.id.button3,
                 R.id.button4,R.id.button5,R.id.button6,R.id.button_clear,
                 R.id.button7,R.id.button8,R.id.button9,R.id.btnSure,
                 R.id.button0,R.id.button_dot,R.id.button00,})
         Button[] btns;
+
+    @BindView(R.id.button_back)
+    ImageButton button_back;
 
         @BindView(R.id.tvInputView)
         TextView tvInputView;
@@ -60,8 +64,13 @@ public class NumKeyBortActivity extends BaseActivity {
                 @Override
                 public void onClick(View v) {
                     try{
-                        Button b = (Button)v;
-                        NumKeyBortActivity.this.onNumberClicked(b.getText().toString(),b.getId());
+                        if(v.getId()!=button_back.getId()) {
+                            Button b = (Button) v;
+                            NumKeyBortActivity.this.onNumberClicked(b.getText().toString(), b.getId());
+                        }else{
+                            ImageButton b = (ImageButton) v;
+                            NumKeyBortActivity.this.onNumberClicked("", b.getId());
+                        }
                     }
                     catch(Exception ex){
                         ex.printStackTrace();
@@ -74,8 +83,7 @@ public class NumKeyBortActivity extends BaseActivity {
                 btn.setOnClickListener(btnNumOnClickListener);
             }
 
-
-
+            button_back.setOnClickListener(btnNumOnClickListener);
         }
 
 

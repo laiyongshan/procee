@@ -11,6 +11,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.ccj.base.base.BaseActivity;
 import com.ccj.base.utils.router.RouterConstants;
 import com.ccj.base.utils.router.RouterUtils;
+import com.yeohe.sdklibrary.scan.ScanCodeActivity;
 
 import butterknife.BindView;
 import butterknife.BindViews;
@@ -65,13 +66,9 @@ public class NumKeyBortActivity extends BaseActivity {
                 }
             };
 
-
             for (Button btn:btns){
                 btn.setOnClickListener(btnNumOnClickListener);
             }
-
-
-
         }
 
 
@@ -89,7 +86,7 @@ public class NumKeyBortActivity extends BaseActivity {
             tvInputView.setText("");
         }else if(viewId==R.id.btnSure){//确认
 //            RouterUtils.navigation("MyTestActivity");
-            startActivity(new Intent(NumKeyBortActivity.this,MyTestActivity.class));
+            startActivity(new Intent(NumKeyBortActivity.this,ScanCodeActivity.class));
         }else {
             int index = mInputString.indexOf(".");
             if (index < 0) {

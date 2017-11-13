@@ -4,6 +4,10 @@ buildscript {
         //butterknife
         mavenCentral()
     }
+
+
+
+
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
 
@@ -14,6 +18,10 @@ buildscript {
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8' // 添加的部分
 
         classpath 'me.tatarka:gradle-retrolambda:3.2.0'
+
+        ext{
+            COMMON_MODULE_DIR_PATH = projectDir.getPath() +  "/common_module/libs"
+        }
     }
 }
 

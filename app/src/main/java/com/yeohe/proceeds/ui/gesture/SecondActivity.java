@@ -1,5 +1,6 @@
 package com.yeohe.proceeds.ui.gesture;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ import com.yeohe.proceeds.utils.PasswordUtil;
 import com.yeohe.proceeds.utils.SlidrUtil;
 
 import butterknife.BindView;
+import qiu.niorgai.StatusBarCompat;
 
 import static com.leo.gesturelibray.enums.LockMode.CLEAR_PASSWORD;
 import static com.leo.gesturelibray.enums.LockMode.SETTING_PASSWORD;

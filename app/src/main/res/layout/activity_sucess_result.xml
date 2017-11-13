@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:rv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <include layout="@layout/item_title2" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:orientation="vertical"
+        >
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="收款成功"
+            android:textSize="@dimen/text_size20"
+            />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+        </RelativeLayout>
+
+
+
+        <com.flyco.roundview.RoundTextView
+            android:id="@+id/complete_rtv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:padding="12dp"
+            android:singleLine="true"
+            android:text="完成"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size18"
+            rv:rv_backgroundColor="@color/colorPrimary"
+            rv:rv_backgroundPressColor="@color/lucency"
+            rv:rv_isRadiusHalfHeight="false"
+            rv:rv_isRippleEnable="false"
+            rv:rv_cornerRadius="5dp"
+            rv:rv_strokeColor="@color/colorPrimary"
+            rv:rv_strokePressColor="@color/lucency"
+            rv:rv_strokeWidth="1dp"
+            rv:rv_textPressColor="#ffffff"
+            />
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

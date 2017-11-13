@@ -23,7 +23,7 @@ import java.util.Map;
 public class PasswordView extends RelativeLayout implements View.OnClickListener {
     Context context;
 
-    private String strPassword;     //输入的密码
+    private String strPassword="";     //输入的密码
     private TextView[] tvList;      //用数组保存6个TextView，为什么用数组？
     //因为就6个输入框不会变了，用数组内存申请固定空间，比List省空间（自己认为）
     private GridView gridView;    //用GrideView布局键盘，其实并不是真正的键盘，只是模拟键盘的功能
@@ -137,6 +137,10 @@ public class PasswordView extends RelativeLayout implements View.OnClickListener
 
     /* 获取输入的密码 */
     public String getStrPassword() {
+        strPassword="";
+        for(TextView tv:tvList)
+            strPassword+=tv.getText();
+
         return strPassword;
     }
 
@@ -182,7 +186,7 @@ public class PasswordView extends RelativeLayout implements View.OnClickListener
             }
             if(position == 11){
 //                viewHolder.btnKey.setBackgroundResource(R.drawable.selector_key_del);
-                viewHolder.btnKey.setText("B");
+                viewHolder.btnKey.setText("C");
             }
 
             return convertView;

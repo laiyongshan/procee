@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import com.ccj.base.base.BaseActivity;
 import com.yeohe.sdklibrary.R;
-import com.yeohe.sdklibrary.R2;
 
 import java.util.List;
 

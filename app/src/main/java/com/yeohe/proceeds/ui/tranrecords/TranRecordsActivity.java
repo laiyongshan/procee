@@ -145,7 +145,7 @@ public class TranRecordsActivity extends BaseActivity implements TrandViewGroup.
 
 
 
-    private void pvTimeShow(TextView time_tv){
+    private void pvTimeShow(final TextView time_tv){
         //时间选择器
         TimePickerView pvTime = new TimePickerView.Builder(TranRecordsActivity.this, new TimePickerView.OnTimeSelectListener() {
             @Override

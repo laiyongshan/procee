@@ -173,7 +173,7 @@ public class TrandViewGroup<X extends TextView>  extends ViewGroup {
 
     private OnGroupItemClickListener onGroupItemClickListener;
 
-    public void setGroupClickListener(OnGroupItemClickListener listener,int viewId) {
+    public void setGroupClickListener(OnGroupItemClickListener listener, final int viewId) {
         onGroupItemClickListener = listener;
         for (int i = 0; i < getChildCount(); i++) {
             final X childView = (X) getChildAt(i);

@@ -59,7 +59,6 @@ public abstract class BaseActivity<T extends BasePresenter>
                     .setTitleText("网络连接失败")
                     .setContentText("请检查网络设置")
                     .show();
-
         };
     }
 
